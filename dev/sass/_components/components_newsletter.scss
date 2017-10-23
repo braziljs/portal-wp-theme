@@ -1,0 +1,66 @@
+///*------------------------------------*\
+//    #NEWSLETTER
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+
+/* WRAPPER
+========================================================================== */
+.newsletter-wrapper {
+	@include rem(margin-bottom, 55px);
+	border-top: 10px solid $color-golden-grass;
+	border-bottom: 10px solid $color-golden-grass;
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(margin-bottom, 80px);
+	}
+
+}
+
+.newsletter-wrapper__top {
+	@include rem(padding, 65px 0 50px);
+	background-color: $color-lightning-yellow;
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(padding-bottom, 90px);
+	}
+
+}
+
+.newsletter-wrapper__bottom {
+	@include rem(padding, 40px 0);
+	background-color: $color-gold;
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(padding, 45px 0 10px);
+	}
+
+}
+
+.newsletter__title {
+	@include rem(font-size, 18px); line-height: 115%; font-weight: bold; color: rgba($color-mine-shaft, .7);
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(font-size, 20px);
+	}
+
+
+}
+
+.newsletter__label {
+	display: inline-block;
+	@include rem(margin-bottom, 5px); @include rem(padding, 5px 10px);
+	@include rem(font-size, 13px); line-height: 110%; color: $color-white; text-transform: uppercase;
+	background-color: $color-mine-shaft;
+	border-radius: 4px;
+}
+
+.newsletter__thumb {
+	@include rem(margin-bottom, 10px);
+
+	@include breakpoint(desktop-and-up) {
+		@include rem(margin-top, -95px);
+	}
+
+}

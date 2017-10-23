@@ -1,0 +1,228 @@
+///*------------------------------------*\
+//    #PRODUCTS
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+$product-color-1: $color-cloud-burst;
+$product-color-2: $color-jon;
+$product-color-3: $color-mine-shaft;
+
+/* WRAPPER
+========================================================================== */
+.product {
+	display: inline-block;
+	@include rem(margin-bottom, 20px);
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(margin-bottom, 40px);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+	}
+
+}
+
+.products__list {
+	position: relative;
+	// @include rem(margin-bottom, 20px);
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(margin-left, 0);
+	}
+
+}
+
+/* ITEM
+========================================================================== */
+.products__item {
+	position: relative;
+	display: inline-block;
+	@include rem(padding, 40px 10px);
+	background-color: $product-color-1;
+
+	@include breakpoint(small) {
+		@include rem(margin-bottom, 20px);
+		width: 100%;
+	}
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(margin-bottom, 20px); @include rem(padding-left, 20px);
+		width: 578px;
+	}
+
+	@include breakpoint(desktop-and-up) {
+		@include rem(padding-top, 50px);
+		width: 740px;
+	}
+
+	.product__type-2 & {
+		background-color: $product-color-2;
+	}
+
+	.product__type-3 & {
+		background-color: $product-color-3;
+	}
+
+}
+
+.products__name {
+	display: inline-block;
+	@include rem(margin-bottom, 10px);
+	@include rem(font-size, 16px); font-weight: 900; color: $color-white; font-style: italic; text-transform: uppercase;
+
+	@include breakpoint(desktop-and-up) {
+		@include rem(margin-bottom, 20px);
+		@include rem(font-size, 20px);
+	}
+
+}
+
+/* PRODUCTS HIGHLIGHT
+========================================================================== */
+.products-highlight {
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(margin-top, 30px);
+	}
+
+}
+
+.products-highlight__item {
+	float: left;
+	margin-top: 0; @include rem(padding, 50px 10px 30px);
+	text-align: center;
+	border: 1px solid $color-white;
+
+	@include breakpoint(small) {
+		margin-right: 0;
+		width: calc(50% - 5px);
+
+		& + .products-highlight__item {
+			margin-top: 0; @include rem(margin-left, 10px);
+		}
+
+	}
+
+	@include breakpoint(tablet-and-up) {
+		margin-left: 0; padding-right: 0; padding-left: 0;
+	}
+
+	@include breakpoint(desktop-and-up) {
+		@include rem(padding, 50px 5px 35px);
+	}
+
+}
+
+.products-highlight__value {
+	display: block;
+	@include rem(margin-bottom, 20px);
+ 	@include rem(font-size, 30px); color: $color-white; font-weight: 900;
+
+	@include breakpoint(desktop-and-up) {
+		@include rem(margin-bottom, 3px);
+		@include rem(font-size, 45px);
+	}
+
+}
+
+.products-highlight__key {
+	display: inline-block;
+	width: 104px;
+	@include rem(font-size, 13px); line-height: 110%; color: $color-white; font-weight: bold; text-transform: uppercase;
+
+	@include breakpoint(tablet-and-up) {
+
+	}
+
+	@include breakpoint(desktop-and-up) {
+		@include rem(font-size, 15px);
+	}
+
+}
+
+/* PRODUCTS LINKS
+========================================================================== */
+.products-links {
+	float: left;
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(margin-left, 235px);
+	}
+
+	@include breakpoint(desktop-and-up) {
+		// @include rem(margin-bottom, 50px);
+		@include rem(margin-left, 290px);
+	}
+
+	.product__type-2 & {
+
+		@include breakpoint(tablet-and-up) {
+			float: right;
+			@include rem(margin-right, 250px);
+		}
+
+		@include breakpoint(desktop-and-up) {
+			@include rem(margin-right, 300px); margin-left: 0;
+		}
+
+	}
+
+}
+
+.products-links__item {
+	@include rem(margin-bottom, 15px);
+
+	.product__type-2 & {
+		float: none;
+
+		@include breakpoint(desktop-and-up) {
+			float: right;
+			clear: both;
+		}
+
+	}
+
+}
+
+.products-links__anchor {
+	.product__type-2 & {
+		color: $product-color-2;
+	}
+
+	.product__type-3 & {
+		color: $product-color-3;
+	}
+
+}
+
+/* PRODUCTS THUMB
+========================================================================== */
+.products__thumb {
+	display: none;
+
+	@include breakpoint(tablet-and-up) {
+		position: absolute; @include rem(top, 70px); @include rem(left, -170px);
+		display: inline-block;
+		width: 235px; height: 244px;
+		border: 10px solid white;
+
+		.product__type-2 & {
+			 @include rem(top, 95px); @include rem(right, -170px); left: auto;
+		}
+
+	}
+
+	@include breakpoint(desktop-and-up) {
+		@include rem(top, 35px); right: calc(100% - 75px); left: auto;
+		width: 300px; height: 300px;
+
+		.product__type-2 & {
+			@include rem(top, 40px); @include rem(right, -220px);
+		}
+
+	}
+
+}

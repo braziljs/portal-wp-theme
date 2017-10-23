@@ -1,0 +1,179 @@
+///*------------------------------------*\
+//    #CONF
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+
+/* WRAPPER
+========================================================================== */
+.conf-wrapper {
+	background-color: $color-mine-shaft;
+}
+
+.conf-container {
+
+	@include breakpoint(tablet-and-up) {
+		display: flex;
+	}
+
+}
+
+.conf-container__event {
+	position: relative; z-index: 5;
+	display: flex; flex-direction: column; justify-content: center; align-items: center;
+	@include rem(padding, 0 10px);
+	width: 50%; @include rem(height, 880px);
+	transform: translate3d(0,0,0);
+	text-align: center;
+
+	&:before {
+		content: '';
+		z-index: 5;
+		position: absolute; top: 0; left:0; width: 100%; height: 100%;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	&:after {
+		content: ''; z-index: 7;
+		position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+		background-color: #222;
+		opacity: .6;
+		transition: opacity ease $basic-transition;
+	}
+
+	&:hover, &:focus {
+		opacity:1;
+
+		&:after {
+			opacity: .1;
+			transition: opacity ease $basic-transition;
+		}
+
+	}
+
+	@include breakpoint(small) {
+		width: 100%; @include rem(height, 320px);
+	}
+
+}
+
+.conf-container__event--poa {
+	&:before {
+		background-image: url('../img/conf/poa-vertical--small.jpg');
+
+		@include breakpoint(tablet-and-up) {
+			background-image: url('../img/conf/poa-vertical.jpg');
+		}
+
+	}
+
+}
+
+.conf-container__event--recife {
+	&:before {
+		// background-image:: url('../img/conf/recife-vertical--small.jpg');
+		background-image:: url('../img/conf/fortaleza-vertical--small.jpg');
+
+		@include breakpoint(tablet-and-up) {
+			background-image:: url('../img/conf/fortaleza-vertical.jpg');
+		}
+
+	}
+
+}
+
+.conf__header {
+	@include breakpoint(small) {
+		position: static;
+		@include rem(padding, 100px 10px 0);
+	}
+
+	position: absolute; @include rem(top, 155px); z-index: $z-index-above;
+	margin: auto;
+	width: 100%;
+
+}
+
+.conf__slogan {
+	display: block;
+	@include rem(margin-bottom, 20px);
+	@include rem(font-size, 14px); color: $color-white; text-transform: uppercase;
+}
+
+.conf-container__title {
+	position: relative;
+	z-index: $z-index-jump;
+	@include rem(margin-bottom, 10px);
+	@include rem(font-size, 30px); line-height: 120%; color: $color-white; font-weight: 900; font-style: italic; text-transform: uppercase;
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(font-size, 40px);
+	}
+
+}
+
+.conf-container__date {
+	position: relative;
+	z-index: $z-index-jump;
+	@include rem(margin-bottom, 35px);
+	@include rem(font-size, 20px); line-height: 120%; color: $color-white; text-transform: uppercase; font-style: italic;
+}
+
+.conf-container__anchor {
+	position: relative;
+	z-index: $z-index-jump;
+
+	.conf-container__event:hover &, .conf-container__event:focus & {
+		color: $color-mine-shaft;
+		border-color: $color-white;
+		background-color: $color-white;
+		will-change: transform, border-color;
+	}
+
+}
+
+
+/* COUNTER
+========================================================================== */
+.countdown__data-wrapper {
+	display: inline-block;
+	@include rem(padding, 15px 15px);
+	border: 2px solid $color-white;
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(margin, 0 0 40px 0); @include rem(padding, 15px 10px);
+	}
+
+	@include breakpoint(desktop-and-up) {
+		@include rem(margin, 0 0 40px 0); @include rem(padding, 35px 20px);
+		@include rem(height, 137px); @include rem(width, 100px);
+	}
+
+}
+
+.countdown__label {
+	display: block;
+	@include rem(font-size, 13px); line-height: 120%;
+}
+
+/* SPEAKERS LIST
+========================================================================== */
+.speakers-list-container {
+	@include rem(margin-top, 80px);
+}
+
+/* HOTELS
+========================================================================== */
+.hotels-container {
+
+}
+
+.hotels-container__link {
+	display: flex;
+	justify-content: center; align-items: center;
+	@include rem(height, 170px);
+	@include rem(font-size, 20px); line-height: 120%; color: $color-white; font-weight: 900; font-style: italic; text-transform: uppercase; text-decoration: none; text-align: center;
+	background-color: $color-cloud-burst;
+}

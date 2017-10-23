@@ -1,0 +1,48 @@
+///*------------------------------------*\
+//    #GRID
+//\*------------------------------------*/
+
+//Loop through the number of columns in the current layout and creates the specific classes
+@for $i from 1 through 12 {
+    .col-#{$i}-12 {
+    	@if $i == 1 {
+
+			//If it's the first column, we can't count the gutter width with the total width
+			width:$columnWidth * $i;
+
+			//This is for the medium width
+			@include breakpoint(exceptDesktop) {
+				width:$columnMediumWidth * $i;
+			}
+
+    		} @else {
+
+    			width: $columnWidth * $i + $gutterWidth * $i - $gutterWidth;
+
+				//This is for the medium width
+				@include breakpoint(exceptDesktop) {
+					width: $columnMediumWidth * $i + $gutterWidth * $i - $gutterWidth;
+				}
+
+    		}
+
+		//This is the default gutterWidth for every column and the display method
+		margin-right: $gutterWidth;
+		float:left;
+
+		//We need to ensure that the columns will not colapse
+		min-width:1px;
+
+		@include breakpoint(small) {
+			min-width:1px; width:100%;
+		}
+
+    }
+}
+
+//Always remove the margin from the last column
+[class*="col"] {
+	&:last-child {
+		margin-right: 0;
+	}
+}

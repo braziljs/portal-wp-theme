@@ -1,0 +1,53 @@
+# Logs and databases #
+######################
+*.log
+=======
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+>>>>>>> 912b3bca44b75b84f34e4d362fc02b2f6026d871
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+<<<<<<< HEAD
+Thumbs.db
+
+# User path specifics #
+######################
+node_modules/
+.sass-cache/
+dev/img-min
+.git/
+.jekyll-metadata
+=======
+Thumbs.db

@@ -1,0 +1,28 @@
+///*------------------------------------*\
+//    #SOCIAL NETWORKS
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+
+/* LIST
+========================================================================== */
+.social-networks {
+
+	@include breakpoint(tablet-and-up) {
+		float: right;
+	}
+
+}
+
+.social-networks__item {
+	display: inline-block; vertical-align: top;
+	@include rem(margin-right, 5px);
+}
+
+.social-networks__anchor {
+	display: flex; align-items: center; justify-content: center;
+	width: 30px; height: 30px;
+	background-color: $color-bronze;
+	border-radius: 50%;
+}

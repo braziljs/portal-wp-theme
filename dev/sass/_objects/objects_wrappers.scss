@@ -1,0 +1,185 @@
+///*------------------------------------*\
+//    #WRAPPERS
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+
+.full-wrapper {
+	overflow: hidden;
+}
+
+/* SECTIONS
+========================================================================== */
+.section {
+	width: 100%;
+    // clear at the end of container
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+
+}
+
+/* ROWS
+========================================================================== */
+.row {
+
+    // clear at the end of container
+    clear: both;
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+
+}
+
+/* CONTENT
+========================================================================== */
+.content {
+	@include rem(padding, 0 10px);
+	max-width: 100%;
+
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    @include breakpoint(tablet-and-up) {
+    	margin: auto; //padding-left: $gutterWidth;
+    	@include rem(padding, 0 22px);
+    	max-width: $mediumWidth;
+    }
+
+	@include breakpoint(desktop-and-up) {
+		@include rem(padding, 0 $gutterWidth); // padding-right: $gutterWidth; @include rem(padding, 0 0 0 20px);
+		max-width: $maxWidth;
+	}
+
+}
+
+//When you need a wrapper for an unknow number of elements
+.content--list {
+    float: left;
+
+    @include breakpoint(tablet-and-up) {
+        margin-right: -$gutterWidth;
+    }
+
+}
+
+/* SECTION WRAPPERS
+========================================================================== */
+.section-wrapper {
+	@include rem(padding-bottom, 60px);
+	background-color: $color-white;
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(padding-bottom, 80px);
+	}
+
+}
+
+/* TYPE VARIATIONS
+========================================================================== */
+.section-wrapper--type-2 {
+	position: relative;
+	z-index: $z-index-ground;
+	@include rem(margin-bottom, 30px); @include rem(padding, 40px 0 0);
+	background-color: $color-jon;
+
+	@include breakpoint(desktop-and-up) {
+		position: relative;
+		z-index: $z-index-ground;
+		margin-bottom: 0; @include rem(padding-bottom, 40px);
+
+		&:before {
+    		content: "";
+    		position: absolute; left: 0; bottom: 100%;
+    		height: 0; width: 0;
+	    	border-color: transparent transparent $color-jon transparent;
+    		border-style: solid;
+    		border-width: 0 0 3vw 100vw;
+		}
+
+		&:after {
+			content: '';
+			position: absolute; left: 0; bottom: 0;
+			z-index: $z-index-underground;
+			width: 100%; height: 100px;
+			background-color: $color-gondola;
+		}
+	}
+
+}
+
+.section-wrapper--type-3 {
+	position: relative;
+	@include rem(padding, 60px 0 60px);
+	background-color: $color-wild-sand;
+
+	&:before {
+		content: '';
+		position: absolute; top: 0; left: 0;
+		width: 100%; height: 60px;
+		background: url('../img/backgrounds/bg-wrapper--3.png') repeat-x;
+	}
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(padding, 100px 0 100px);
+	}
+
+}
+
+.section-wrapper--type-4 {
+	position: relative;
+	@include rem(padding, 60px 0);
+	background-color: $color-lightning-yellow;
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(padding, 60px 0 0);
+
+		&:before {
+    		content: "";
+    		position: absolute; left: 0; bottom: 100%;
+    		height: 0; width: 0;
+	    	border-color: transparent transparent $color-lightning-yellow transparent;
+    		border-style: solid;
+    		border-width: 0 0 3vw 100vw;
+		}
+
+	}
+
+}
+
+.section-wrapper--type-5 {
+	position: relative;
+	@include rem(margin-bottom, 55px); @include rem(padding, 70px 0);
+	background-color: $color-wild-sand;
+
+	&:before {
+		content: '';
+		position: absolute; top: 0; left: 0;
+		width: 100%; height: 60px;
+		// background: url('../img/backgrounds/bg-wrapper--5.png') repeat-x;
+		background: url('../img/backgrounds/bg-wrapper--3.png') repeat-x;
+	}
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(margin-bottom, 75px);
+		// @include rem(padding, 60px 0);
+	}
+
+}

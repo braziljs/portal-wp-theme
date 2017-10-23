@@ -1,0 +1,45 @@
+///*------------------------------------*\
+//    #ELEMENT POSITIONS
+//\*------------------------------------*/
+
+/* CONTAINERS
+========================================================================== */
+
+//Center the elements from the container
+.center-elements { text-align:center; }
+
+.center-elements--mobile {
+	text-align: center;
+	@include breakpoint(tablet-and-up) {
+		text-align: left;
+	}
+}
+
+//Center floated columns
+.center-col {
+    display: table;
+    margin: 0 auto;
+}
+
+//Center floated columns and content
+.center-all {
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* ELEMENTS
+========================================================================== */
+.first { margin-left: 0 !important; }
+
+//Resets margin-right of the element
+.last { margin-right: 0 !important; }
+
+//Resets margin-bottom of the element
+.bottom { margin-bottom: 0 !important; }
+
+//Resets margin-top of the element
+.top { margin-top: 0 !important; }
+
+//Float the container to the oposite way in the markup
+.flow-opposite { float: right; }

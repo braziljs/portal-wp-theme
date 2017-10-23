@@ -1,0 +1,464 @@
+///*------------------------------------*\
+//    #POST
+//\*------------------------------------*/
+
+
+/* VARIABLES
+========================================================================== */
+$post-header-background: $color-mine-shaft;
+$post-header-padding: 0 80px;
+$inner-border-space: 5px;
+$post-content-wrapper-width-medium: 600px;
+$post-content-wrapper-width-desktop: 800px;
+
+/* HEADER
+========================================================================== */
+.post-header {
+	@include rem(margin-bottom, 30px); @include rem(padding, 90px 0 40px);
+	background-color: $post-header-background;
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(margin-bottom, 60px); @include rem(padding, 130px 0 50px);
+	}
+
+}
+
+.post-header__content {
+	@include rem(padding, $post-header-padding);
+}
+
+/* WRAPPER
+========================================================================== */
+.page-container {
+	@include rem(margin-bottom, 75px);
+}
+
+.header__meta-author {
+	@include rem(margin-bottom, 10px);
+	@include rem(font-size, 13px); line-height: 120%;
+}
+
+.header__meta-author-anchor {
+	color: $color-lightning-yellow; text-transform: uppercase; font-weight: bold; font-style: italic;
+}
+
+.header__meta {
+	display: block; vertical-align: top;
+	color: $color-white;
+}
+
+.post__time {
+	position: relative;
+	display: block;
+	@include rem(margin-bottom, 10px);
+	@include rem(font-size, 13px); text-transform: uppercase;
+
+	@include breakpoint(tablet-and-up) {
+		display: inline-block;
+
+		&:after {
+			content: '|';
+			@include rem(padding, 0 5px 0 10px);
+			color: currentColor;
+		}
+
+	}
+
+}
+
+.post-categories-wrapper {
+	display: inline-block;
+
+	.post-categories {
+		display: inline-block;
+
+		li {
+			position: relative;
+			display: inline-block;
+
+			&:not(:last-child) {
+
+				&:after {
+					content: ', ';
+				}
+
+			}
+
+		}
+
+		a {
+			position: relative;
+			@include rem(font-size, 13px); color: $color-lightning-yellow; text-transform: uppercase; font-weight: bold; font-style: italic;
+		}
+
+	}
+
+}
+
+/* POST CONTENT
+========================================================================== */
+.post-content-wrapper {
+	margin: auto;
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(max-width, $post-content-wrapper-width-medium);
+	}
+
+	@include breakpoint(desktop-and-up) {
+		@include rem(max-width, $post-content-wrapper-width-desktop);
+	}
+
+}
+
+.post-entry {
+	@include rem(margin-bottom, 40px);
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(margin-bottom, 70px);
+	}
+
+	//ANCHORS
+	a {
+		font-family: $font-primary; text-transform: uppercase; color: $color-cloud-burst; font-weight: 900; text-transform: uppercase; font-style: italic;
+	}
+
+	//BLOCKQUOTE
+	blockquote {
+		position: relative;
+		@include rem(margin, 25px 0 25px 10px); @include rem(padding, 25px 0); font-style: italic; text-transform: uppercase;
+
+		@include breakpoint(tablet-and-up) {
+			@include rem(margin, 55px 0 55px 80px);
+		}
+
+		&:before, &:after {
+			content: '';
+			position: absolute; left: 0;
+			@include rem(width, 44px); @include rem(height, 3px);
+			background-color: currentColor;
+		}
+
+		&:before {
+			top: 0;
+		}
+
+		&:after {
+			bottom: 0;
+		}
+
+		p {
+			margin-bottom: 0 !important;
+			line-height: 200%;
+		}
+
+	}
+
+	//PARAGRAPHS
+	p {
+		@include rem(margin-bottom, 25px);
+		font-family: $font-special; @include rem(font-size, 16px); line-height: 1.5; color: $color-mine-shaft;
+	}
+
+	//HEADINGS
+	h2, h3 {
+		position: relative;
+		@include rem(margin-top, 45px);
+		line-height: 120%; font-weight: 900; font-style: italic; text-transform: uppercase;
+	}
+
+	h2 {
+ 		@include rem(margin-bottom, 15px);
+		@include rem(font-size, 16px);
+
+		@include breakpoint(tablet-and-up) {
+			@include rem(font-size, 20px); color: $color-mine-shaft;
+		}
+
+	}
+
+	h3 {
+		@include rem(margin-bottom, 15px); @include rem(padding-bottom, 10px);
+		@include rem(font-size, 13px); color: $color-emperor;
+		border-bottom: 1px solid $color-alto;
+
+		@include breakpoint(tablet-and-up) {
+			@include rem(margin-bottom, 30px);
+			@include rem(font-size, 16px);
+		}
+
+		&:after {
+			content: '';
+			position: absolute; right: 0; bottom: -2px; left: 0;
+			@include rem(width, 30px); @include rem(height, 3px);
+			background-color: currentColor;
+		}
+
+	}
+
+	//YOUTUBE EMBED
+	.embed-figure__container {
+		position: relative;
+		overflow: hidden;
+		@include rem(margin-bottom, 20px); padding-bottom: 56.25%;
+		height: 0; height: auto;
+
+		iframe, object, embed {
+			position: absolute; top: 0; left: 0;
+			width: 100%; height: 100%;
+			border: none;
+		}
+
+	}
+
+	//CAPTIONS
+	.wp-caption {
+		max-width: 100%;
+		text-align: center;
+	}
+
+	.wp-caption-text {
+		@include rem(margin-top, -35px);
+		@include rem(font-size, 14px); line-height: 130%; color: $color-emperor; font-style: italic;
+	}
+
+	//IMAGES
+	img {
+		@include rem(margin, 35px auto 40px auto);
+	}
+
+	.alignleft {
+		float: left;
+
+
+		@include breakpoint(tablet-and-up) {
+			@include rem(margin, 5px 30px 0 -80px);
+		}
+
+	}
+
+	.aligncenter {
+		display: block;
+		@include rem(margin, 35px auto 40px auto);
+	}
+
+	.size-large {
+		position: relative;
+		left: 50%;
+		display: block;
+		max-width: 115%; height: auto;
+		transform: translateX(-50%);
+
+		@include breakpoint(desktop-and-up) {
+			max-width: 135%;
+		}
+
+	}
+
+	//LIST
+	ul {
+		@include rem(margin-top, -10px); @include rem(margin-bottom, 20px); @include rem(padding-left, 20px);
+
+		@include breakpoint(tablet-and-up) {
+			@include rem(padding-left, 40px);
+		}
+
+		@include breakpoint(desktop-and-up) {
+			@include rem(padding-left, 80px);
+		}
+	}
+
+	li {
+		position: relative;
+		@include rem(margin-bottom, 10px);
+		font-family: $font-special; line-height: 120%;
+
+		&:before {
+			content: '·';
+			position: absolute; @include rem(left, -10px);
+		}
+
+	}
+
+}
+
+.entry-title {
+	@include rem(margin-bottom, 5px);
+	line-height: .85;
+}
+
+/* TAGS LIST
+========================================================================== */
+.tags-list-wrapper {
+	display: block;
+	@include rem(margin-bottom, 40px);
+	width: 100%;
+	@include rem(font-size, 13px); text-transform: uppercase; color: $color-emperor; font-weight: 900;
+
+	@include breakpoint(desktop-and-up) {
+		@include rem(margin-top, -30px);
+	}
+
+}
+
+.tags-list__title {
+	display: inline-block;
+	@include rem(margin-bottom, 10px); @include rem(margin-right, 5px);
+}
+
+.tags-list {
+	display: inline-block;
+
+	li {
+		display: inline-block;
+	}
+
+}
+
+.tags-list__item {
+	@include rem(margin-right, 5px); @include rem(margin-bottom, 10px);
+
+	a {
+		@include rem(font-size, 11px); color: $color-cloud-burst;
+		border: 1px solid $color-cloud-burst;
+		@include rem(padding, 5px 10px);
+		border-radius: 7px;
+	}
+}
+
+/* POST SHARER
+========================================================================== */
+.post-share {
+
+	@include rem(margin-bottom, 60px); @include rem(padding, 30px 0 );
+	border: 2px solid rgb(221,221,221); border-left: 0; border-right: 0;
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(padding-left, 10px);
+	}
+
+}
+
+.post-share__item {
+	// backface-visibility: hidden;
+	@include breakpoint(small) {
+		display: flex;
+		justify-content: center;
+
+		&:not(:last-child) {
+			@include rem(margin-bottom, 10px);
+		}
+
+	}
+
+	@include breakpoint(tablet-and-up) {
+		display: inline-block; vertical-align: top;
+	}
+
+	&:not(:last-child) {
+		@include rem(margin-right, 5px);
+
+		@include breakpoint(tablet-and-up) {
+			@include rem(margin-right, 10px);
+		}
+
+	}
+
+}
+
+.post-share__anchor {
+	display: flex; justify-content: center; align-items: center;
+	@include rem(padding, 0 10px);
+	@include rem(height, 28px);
+	@include rem(font-size, 11px); color: $color-white; font-weight: 900; text-style: italic; text-transform: uppercase;
+	transform: skew(-6deg);
+	transition: background-color ease $basic-transition;
+
+	&:hover, &:focus {
+		opacity: 1;
+		transition: background-color ease $basic-transition;
+	}
+
+}
+
+.post-share__icon {
+	@include rem(margin-right, 5px);
+}
+
+.post-share__anchor--comments {
+	background-color: rgb(68,68,68);
+
+	&:hover, &:focus {
+		background-color: rgba(68,68,68, .7);
+	}
+
+}
+
+.post-share__anchor--share {
+	background-color: rgb(65,94,155);
+
+	&:hover, &:focus {
+		background-color: rgba(65,94,155, .7);
+	}
+
+}
+
+.post-share__anchor--tweet {
+	background-color: rgb(85,172,238);
+
+	&:hover, &:focus {
+		background-color: rgba(85,172,238, .7);
+	}
+
+}
+
+
+/* AUTHOR CONTAINER
+========================================================================== */
+.author-container {
+	display: flex; flex-direction: column;
+	@include rem(margin-bottom, 60px); padding: 0;
+	text-align: center;
+
+	@include breakpoint(tablet-and-up) {
+		flex-direction: row;
+		@include rem(margin-bottom, 80px); @include rem(padding, 0 20px);
+		text-align: left;
+	}
+
+	@include breakpoint(desktop-and-up) {
+		@include rem(padding, 0 60px);
+	}
+
+}
+
+.author-container__thumb {
+	position: relative;
+	flex: 1 0 auto;
+	margin: auto;
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(margin, 0 20px 0 0);
+	}
+
+	&:before {
+		content: '';
+		position: absolute; top: $inner-border-space; left: $inner-border-space;
+		width: calc(100% -  #{$inner-border-space} * 2); @include rem(height, 72px);
+		border: 1px solid rgba($color-white, .6);
+		border-radius: 35px;
+	}
+
+	.avatar {
+		border-radius: 50%;
+	}
+
+}
+
+.author-container__info-container {
+	width: 100%;
+}
+
+.author-container__name {
+	display: inline-block;
+	@include rem(margin-bottom, 35px);
+}

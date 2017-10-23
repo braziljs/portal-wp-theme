@@ -1,0 +1,211 @@
+///*------------------------------------*\
+//    #NAVIGATION
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+$navigation-item-color: $color-black;
+$navigation-border-margin: 8px;
+$navigation-hamburger-stick-height: 2px;
+$navigation-hamburger-stick-width: 12px;
+
+/* WRAPPER
+========================================================================== */
+.navigation-wrapper {
+	@include rem(padding, 18px 0 15px);
+
+	@include breakpoint(desktop-and-up) {
+		@include rem(padding, 30px 0);
+	}
+
+}
+
+.navigation {
+
+	.is-open & {
+		position: fixed; top: 0; left: 0;
+		z-index: $z-index-sky;
+		display: flex; flex-direction: column; justify-content: center;
+		width: 100%; height: 100vh;
+		background-color: $color-white;
+		opacity: 0;
+		animation: openNavigationModal $basic-transition ease 1 normal forwards;
+	}
+
+}
+
+//When the modal is oppened, stop the page scroll.
+.body.navigation-is-open {
+	overflow: hidden;
+	-webkit-overflow-scrolling: touch;
+}
+
+/* NAVIGATION LIST
+========================================================================== */
+.navigation-list {
+	display: none;
+
+	@include breakpoint(desktop-and-up) {
+		display: inline-block;
+	}
+
+	.is-open & {
+		display: block;
+	}
+
+}
+
+/* NAVIGATION ITEMS
+========================================================================== */
+.menu-item {
+	position: relative;
+	display: inline-block;
+	@include rem(font-size, 13px); line-height: 120%; color: $navigation-item-color; font-weight: bold; text-transform: uppercase;
+
+	& + .menu-item {
+		@include rem(margin-left, 30px);
+	}
+
+	a {
+		position: relative;
+
+		&:after {
+			content: '';
+			display: block; position: absolute;
+			width: 100%; height: 3px;
+			background-color: $color-lightning-yellow;
+			opacity: 0;
+			transform: translateY(0);
+			transition: opacity ease $basic-transition, transform ease $basic-transition;
+		}
+
+		&:hover, &:focus {
+			opacity: .7;
+
+			&:after {
+				opacity: 1;
+				transform: translateY($navigation-border-margin);
+			}
+
+		}
+
+	}
+
+	.is-open & {
+		display: block;
+		margin-left: 0; @include rem(margin-bottom, 25px);
+		// @include rem(font-size, 22px); text-align: center;
+		@include rem(font-size, 16px); text-align: center;
+		color: $color-mine-shaft;
+		animation: animateNavigationItems $basic-transition ease 1 normal forwards;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+	}
+
+}
+
+.current-menu-item {
+	color: rgba($navigation-item-color, .5);
+	pointer-events: none;
+
+	a {
+		&:after {
+			opacity: 1;
+			@include rem(margin-top, $navigation-border-margin);
+		}
+
+		&:hover, &:focus {
+			&:after {
+				transform: none;
+			}
+		}
+
+	}
+
+}
+
+/* NAVIGATION ICONS
+========================================================================== */
+.navigation-toogler {
+	display: block;
+	border: none;
+	background-color: transparent;
+	transition: opacity ease .4s;
+	cursor: pointer;
+
+	&:hover, &:focus { opacity:.6; }
+
+	@include breakpoint(desktop-and-up) {
+		display: none;
+	}
+
+	.is-open & {
+		position: relative;
+		z-index: $z-index-moon;
+	}
+
+}
+
+.navigation-toogler__burguer {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	@include rem(margin-top, -2px); @include rem(margin-left, 5px); @include rem(margin-right, 5px);
+	width: $navigation-hamburger-stick-width; height: $navigation-hamburger-stick-height;
+	background-color: $navigation-item-color;
+	border-radius: 6px;
+	transition: all ease .4s;
+
+	&:before, &:after {
+		content:'';
+		position: absolute; left: 0;
+		width: $navigation-hamburger-stick-width; height: $navigation-hamburger-stick-height;
+		background-color: $navigation-item-color;
+		border-radius: 6px;
+		transition: all ease .4s;
+	}
+
+	&:before { top: 4px; }
+
+	&:after { bottom: 4px; }
+
+	.is-open & {
+		top: -5px;
+		background-color: transparent;
+		&:before { transform: rotate(130deg); top: 5px; }
+		&:after { top: 5px; transform: rotate(-130deg); }
+	}
+
+}
+
+.navigation-toogler__text {
+	position: relative; top: 1px;
+	display: inline-block;
+	@include rem(margin-right, 5px);
+	@include rem(font-size, 13px); font-family: $font-primary; color: $navigation-item-color; font-weight: bold; text-transform: uppercase;
+}
+
+/* ANIMATIONS
+========================================================================== */
+// OPEN NAVIGATION MODAL ANIMATION
+@keyframes openNavigationModal {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+// ANIMATE THE MODAL ITEMS INSIDE THE MOBILE NAVIGATION
+@keyframes animateNavigationItems {
+	from {
+		transform:translateY(150%);
+	}
+	to {
+		transform:translateY(0);
+	}
+}

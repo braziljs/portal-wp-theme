@@ -1,0 +1,8 @@
+///*------------------------------------*\
+//    #BOX-SIZING FIX
+//\*------------------------------------*/
+
+// Border-box for neat margin and padding values integrated in the current element box
+*, *:before, *:after {
+  box-sizing: border-box;
+}

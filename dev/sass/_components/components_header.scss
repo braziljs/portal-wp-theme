@@ -1,0 +1,128 @@
+///*------------------------------------*\
+//    #TICKER
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+$highlight-bg-color: $color-cloud-burst;
+$highlight-height-space: 20px;
+$header-height: 530px;
+
+/* CONTAINER
+========================================================================== */
+.header-container {
+	display: inline-block;
+	@include rem(margin-bottom, 40px);
+	background: url('../img/backgrounds/header-bg-2.jpg') black no-repeat top center;
+	width: 100%;
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(margin-bottom, 100px);
+		@include rem(height, $header-height);
+		border-bottom: 10px solid $color-lightning-yellow;
+	}
+
+}
+
+.header-content {
+	@include rem(padding, 205px 0 50px);
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(margin-top, 250px); padding: 0;
+	}
+
+}
+
+/* ELEMENTS
+========================================================================== */
+.header__logo {
+	position: absolute; @include rem(top, 10px);
+	z-index: $z-index-jump;
+	width: 145px; height: 104px;
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(top, 5px);
+		width: 166px; height: 119px;
+	}
+
+	@include breakpoint(desktop-and-up) {
+		@include rem(top, 25px);
+		width: auto; height: auto;
+	}
+
+}
+
+.header__title {
+	@include rem(margin-bottom, 30px);
+	@include rem(font-size, 24px); line-height: 110%; color: $color-white; font-weight: bold;
+
+	@include breakpoint(desktop-and-up) {
+		@include rem(margin-bottom, 20px);
+		@include rem(font-size, 30px);
+	}
+
+}
+
+/* HEADER HIGHLIGHT
+========================================================================== */
+.header-highlight {
+	position: relative;
+	@include rem(padding, 50px 0 40px);
+	background-color: $highlight-bg-color;
+
+	&:before {
+		content: '';
+		position: absolute; top: 0; right: -100%; left: -100%;
+		height: 100%;
+		background-color: $highlight-bg-color;
+
+	}
+
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(margin-top, 170px); @include rem(padding, 35px 10px 35px 0);
+
+		&:before, &:after {
+			content: '';
+			position: absolute; left: -$highlight-height-space;
+			width: 100%;
+			background-color: $highlight-bg-color;
+		}
+
+		&:before {
+			top: 0;
+			z-index: $z-index-ground;
+			height: 100%;
+		}
+
+	}
+
+	@include breakpoint(desktop-and-up) {
+		@include rem(padding, 65px 35px 65px 20px);
+
+		&:before, &:after {
+			width: calc(100% + #{$highlight-height-space} * 2);
+		}
+
+		&:after {
+			content: '';
+			bottom: 0;
+			z-index: $z-index-jump;
+			height: $highlight-height-space;
+			border-top: $highlight-height-space solid $highlight-bg-color;
+			border-right: $highlight-height-space solid $color-white;
+		}
+
+	}
+
+}
+
+.header-highlight__content {
+	position: relative;
+	z-index: $z-index-jump;
+
+	p {
+		@include rem(margin-bottom, 20px);
+	}
+
+}

@@ -1,0 +1,49 @@
+///*------------------------------------*\
+//    #VARIABLES
+//\*------------------------------------*/
+
+/* GRID SIZES
+========================================================================== */
+$smallSize: 47.9375rem; //767px
+$mediumSize: 48rem; //768px
+$maxMediumSize: 61.1875rem; //979px
+$desktopSize: 61.25rem; //980px
+
+
+/* GRID WIDTHS
+========================================================================== */
+$maxWidth: $desktopSize; //980px
+$mediumWidth: $mediumSize;  //767px
+
+/* GRID SPACING
+========================================================================== */
+$columnWidth: 3.75rem; //60px
+$columnMediumWidth: 2.625rem; //42px
+$gutterWidth: 1.25rem; //20px
+$gutterSmallWidth: 0.625rem; //10px
+
+/* CUSTOM BREAKPOINTS
+========================================================================== */
+$breakpoints: (
+  'small'  : ( max-width: $smallSize ),
+  'exceptSmall' : ( min-width: $smallSize ),
+  'mobile' : ( max-width: $mediumSize ),
+  'desktop'  : ( min-width: $desktopSize ),
+  'exceptDesktop' : ( max-width: $desktopSize),
+  'tablet-and-up': (min-width: $smallSize),
+  'desktop-and-up': (min-width: $desktopSize)
+);
+
+
+/* Z-INDEX
+========================================================================== */
+$z-index-underground: -1;
+$z-index-ground: 1;
+$z-index-jump: 10;
+$z-index-above: 100;
+$z-index-sky: 1000;
+$z-index-moon: 10000;
+
+/* TRANSITIONS
+========================================================================== */
+$basic-transition: .3s;

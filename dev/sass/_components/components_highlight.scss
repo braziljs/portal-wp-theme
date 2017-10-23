@@ -1,0 +1,91 @@
+///*------------------------------------*\
+//    #HIGHLIGHT
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+
+/* HIGHLIGHT
+========================================================================== */
+.highlight__thumb-container {
+	position: relative;
+	@include rem(margin-bottom, 10px);
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(margin-bottom, 20px);
+
+		&:after {
+			content: '';
+			position: absolute; right: -20px; top: 40px;
+			width: 170px; height: 3px; background-color: $color-lightning-yellow;
+		}
+
+	}
+
+	@include breakpoint(desktop-and-up) {
+		&:after {
+			right: -40px;
+			width: 193px;
+		}
+	}
+
+}
+
+/* HIGHLIGHT INFO
+========================================================================== */
+.highlight__info {
+	@include breakpoint(tablet-and-up) {
+		@include rem(padding-left, 20px);
+	}
+
+	@include breakpoint(desktop-and-up) {
+		@include rem(margin-top, 20px); @include rem(padding-left, 40px);
+
+	}
+
+}
+
+.highlight__title {
+	@include rem(margin-bottom, 5px);
+	@include rem(font-size, 24px); line-height: 110%; color: $color-mine-shaft;
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(margin-bottom, 10px);
+		@include rem(font-size, 30px);
+	}
+
+}
+
+.highlight__title--color-2 {
+	color: $color-white;
+}
+
+/* HIGHLIGHT TYPE-2
+========================================================================== */
+.highlight--type-2 {
+
+	.highlight__thumb-container {
+		float: right;
+	}
+
+	.highlight__info {
+		margin-left: 0; @include rem(margin-right, 20px);
+	}
+
+	.highlight__thumb-container {
+		margin-right: 0;
+
+		&:after {
+			@include breakpoint(tablet-and-up) {
+				@include rem(left, -20px);
+			}
+
+			@include breakpoint(desktop-and-up) {
+				@include rem(left, -40px);
+			}
+
+		}
+
+	}
+
+}

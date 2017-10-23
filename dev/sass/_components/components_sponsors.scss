@@ -1,0 +1,44 @@
+///*------------------------------------*\
+//    #SPONSORS
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+
+/* SPONSORS LIST
+========================================================================== */
+.sponsor-list {
+	@include rem(margin-bottom, 25px);
+}
+
+.sponsor-list__item {
+	display: inline-block;
+	@include rem(margin, 0 30px 60px 0);
+
+	@include breakpoint(small) {
+		@include rem(margin-right, 10px); @include rem(margin-bottom, 30px);
+		width: 25%;
+	}
+
+}
+
+.links-list {
+	display: inline-block;
+	@include rem(margin-bottom, 35px);
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(margin-bottom, 55px);
+	}
+
+}
+
+.links-list__item {
+	@include rem(margin-bottom, 20px);
+	@include rem(font-size, 13px); line-height: 120%;
+}
+
+.links-list__anchor {}
+
+.sponsor-list__paragraph {
+	@include rem(margin-bottom, 40px);
+}

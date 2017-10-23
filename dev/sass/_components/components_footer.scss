@@ -1,0 +1,32 @@
+///*------------------------------------*\
+//    #FOOTER
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+
+/* FOOTER INFO
+========================================================================== */
+.footer-info {
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(margin-top, 60px);
+	}
+
+}
+
+.footer-info__description {
+	display: inline-block;
+	@include rem(margin-bottom, 35px);
+	line-height: 150%;
+}
+
+.powered-wrapper {
+	@include rem(padding, 25px 0 15px);
+	background-color: $color-mine-shaft;
+	color: $color-white;
+}
+
+.powered__info {
+	@include rem(font-size, 14px);
+}

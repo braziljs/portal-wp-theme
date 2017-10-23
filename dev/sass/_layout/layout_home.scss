@@ -1,0 +1,70 @@
+///*------------------------------------*\
+//    #HOME LAYOUT
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+
+/* VIDEOS
+========================================================================== */
+.home-videos {
+	position: relative;
+	z-index: 1;
+
+	.media-wrapper {
+		float: left;
+		@include rem(margin-bottom, 10px); @include rem(margin-right, 15px);
+
+		@include breakpoint(tablet-and-up) {
+			width: 100%;
+		}
+
+	}
+
+}
+
+.home-videos__item-list {
+	display: inline-block;
+	@include rem(margin-bottom, 35px);
+}
+
+.home-videos__title {
+	@include rem(margin-bottom, 15px);
+	@include rem(font-size, 20px); line-height: 120%; color: $color-white; font-weight: 900; font-style: italic; text-transform: uppercase;
+}
+
+.home-videos__info {
+	float: left;
+	width: 50%;
+	font-family: $font-primary; @include rem(font-size, 16px);
+
+	@include breakpoint(tablet-and-up) {
+		width: 100%;
+		@include rem(font-size, 15px);
+	}
+
+}
+
+.home-videos__wrapper {
+	position: relative;
+	@include rem(margin-bottom, 90px); @include rem(margin-top, -35px);  @include rem(padding-top, 30px); padding-bottom: 60px;
+	background-color: $color-gondola;
+
+	&:before {
+    	content: "";
+    	position: absolute; bottom: 0; left: 0;
+    	width: 0; height: 0;
+	    border-color: transparent transparent $color-white transparent;
+    	border-style: solid;
+    	border-width: 0 0 3vw 100vw;
+	}
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(padding-bottom, 100px);
+	}
+
+	@include breakpoint(desktop-and-up) {
+		padding-top: 0;
+	}
+
+}

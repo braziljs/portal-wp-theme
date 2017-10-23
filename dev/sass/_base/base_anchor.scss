@@ -1,0 +1,53 @@
+///*------------------------------------*\
+//    #ANCHORS
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+
+/* CUSTOM RESET
+========================================================================== */
+a {
+	display: inline-block;
+	color: inherit; text-decoration: none;
+	transition: opacity ease $basic-transition;
+
+	&:focus, &:hover {
+		opacity: .7;
+		transition: opacity ease $basic-transition;
+	}
+
+}
+
+/* ANCHOR
+========================================================================== */
+.anchor {
+	position: relative;
+	// display: block;
+	@include rem(font-size, 13px); color: $color-cloud-burst; font-weight: 900; font-style: italic; text-transform: uppercase; text-decoration: none;
+
+	& +.anchor {
+		@include rem(margin-top, 20px);
+	}
+
+	li & {
+		@include rem(padding-left, 8px);
+
+		&:before {
+			content: '›';
+			position: absolute; left: 0;
+		}
+
+	}
+
+}
+
+/* COLOR VARIABLES
+========================================================================== */
+.anchor--color-2 {
+	color: $color-mine-shaft;
+}
+
+.anchor--color-3 {
+	color: $color-jon;
+}

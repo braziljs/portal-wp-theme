@@ -1,0 +1,43 @@
+///*------------------------------------*\
+//    #MEDIA OBJECT
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+$inner-border-width: 1px;
+$inner-border-color: rgba($color-white, .6);
+$inner-border-space: 5px;
+
+/* WRAPPER
+========================================================================== */
+.media-wrapper {
+	display: inline-block;
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute; top: $inner-border-space; left: $inner-border-space;
+		width: calc(100% -  #{$inner-border-space} * 2); height: calc(100% - #{$inner-border-space} * 2);
+		border: $inner-border-width solid $inner-border-color;
+	}
+
+}
+
+.media-wrapper--video {
+	&:after {
+		content: '';
+		position: absolute; top: 0; left: 0;
+		width: 100%; height: 100%;
+		background: url(../img/icons/icon-play.svg) no-repeat center center;
+	}
+}
+
+.media-wrapper--video-large {
+
+	@include breakpoint(tablet-and-up) {
+		&:after {
+			background-size: 83px 83px;
+		}
+	}
+
+}

@@ -1,0 +1,143 @@
+/*------------------------------------*\
+    #PROJECT NAME
+\*------------------------------------*/
+
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Colors.................Colors the project will use
+ * Fonts..................Fonts used in the projects.
+ * Variables..............Global project variables.
+ *
+ * TOOLS
+ * REM....................PX to REM mixin.
+ * Breakpoint.............Breakpoint mixin.
+ * Placeholder............Placeholder style mixin.
+ *
+ * GENERIC
+ * Box-sizing.............Puts border-box in every DOM element.
+ * Normalize.css..........A level playing field.
+ * Reset..................A pared back reset to remove margins.
+ * Grid...................Our grid measures.
+ *
+ * BASE
+ * Page...................Page-level styles (HTML element).
+ * Headings...............Heading styles
+ * Paragraphs.............Paragraphs styles
+ * Type...................Misc type styles
+ * Anchor.................Hyperlink styles
+ * Buttons................Buttons reset styles
+ * Tables.................Table styles
+ *
+ * OBJECTS
+ * Media..................Media for thumbs and videos.
+ * Anchor-Buttons.........Anchor buttons styles.
+ * Wrappers...............Wrappers and page constraints.
+ *
+
+ * COMPONENTS
+ * Skip-Links.............Accessible skip to content links.
+ * Header.................Site header variations.
+ * Navigation.............Main navigation styles.
+ * Cards..................Content cards list.
+ * Highlight..............Highlight articles.
+ * Products...............Producs List.
+ * Ticker.................Page Tickers.
+ * Schedule...............Event Schedule.
+
+ * LAYOUT
+ * Home...................Home Page Layout.
+ * Post...................Post Content Layout.
+ * Page...................Page Content Layout.
+ * Articles...............Article list page Layout.
+ * Conf...................Conf Layout.
+
+ * HELPERS
+ * Show/hide............Helpers to show and side stuff.
+ * Elements-Positions...Position and clear elements and columns.
+ * Text.................Helpers for text elements.
+ * Margins..............Generic margins for elements.
+ */
+
+/**
+ * #SETTINGS
+ */
+@import "_settings/settings_colors.scss";
+@import "_settings/settings_fonts.scss";
+@import "_settings/settings_variables.scss";
+
+/**
+ * #TOOLS
+ */
+@import "_tools/tools_rem.scss";
+@import "_tools/tools_breakpoint.scss";
+@import "_tools/tools_placeholder.scss";
+
+/**
+ * #GENERIC
+ */
+@import "_generic/generic_box-sizing.scss";
+@import "_generic/generic_normalize.scss";
+@import "_generic/generic_html5boilerplate.scss";
+@import "_generic/generic_grid.scss";
+
+/**
+ * #BASE
+ */
+@import "_base/base_page.scss";
+@import "_base/base_headings.scss";
+@import "_base/base_paragraphs.scss";
+@import "_base/base_list.scss";
+// @import "_base/base_type.scss";
+@import "_base/base_anchor.scss";
+// @import "_base/base_buttons.scss";
+// @import "_base/base_tables.scss";
+
+/**
+ * #OBJECTS
+ */
+@import "_objects/objects_media.scss";
+@import "_objects/objects_anchor-buttons.scss";
+@import "_objects/objects_wrappers.scss";
+
+/**
+ * #COMPONENTS
+ */
+ @import "_components/components_skip-links.scss";
+ @import "_components/components_header.scss";
+ @import "_components/components_navigation.scss";
+ @import "_components/components_cards.scss";
+ @import "_components/components_highlight.scss";
+ @import "_components/components_products.scss";
+ @import "_components/components_newsletter.scss";
+ @import "_components/components_ticker.scss";
+ @import "_components/components_schedule.scss";
+ @import "_components/components_sponsors.scss";
+ @import "_components/components_social-networks.scss";
+ @import "_components/components_forms.scss";
+ @import "_components/components_footer.scss";
+
+/**
+ * #LAYOUTS
+ */
+ @import "_layout/layout_home.scss";
+ @import "_layout/layout_post.scss";
+ @import "_layout/layout_page.scss";
+ @import "_layout/layout_articles.scss";
+ @import "_layout/layout_events.scss";
+ @import "_layout/layout_conf.scss";
+
+/**
+ * #HELPERS
+ */
+@import "_helpers/helpers_hide-show.scss";
+@import "_helpers/helpers_element-positions.scss";
+// @import "_helpers/helpers_text.scss";
+// @import "_helpers/helpers_border.scss";
+// @import "_helpers/helpers_margins.scss";
+
+/**
+ * #PLUGINS
+*/
+@import "_plugins/plugins_prism.scss";

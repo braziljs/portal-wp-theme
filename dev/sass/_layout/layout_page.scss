@@ -1,0 +1,42 @@
+///*------------------------------------*\
+//    #PAGE
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+
+/* HEADER WRAPPER
+========================================================================== */
+.page-header {
+	position: relative;
+	@include rem(padding, 90px 0 20px);
+
+	@include breakpoint(tablet-and-up) {
+		@include rem(padding, 130px 0 30px);
+	}
+
+	&:before {
+		content: '';
+		position: absolute; top: 0; left: 0;
+		width: 100%; height: 60px;
+		background: url('../img/backgrounds/bg-wrapper--3.png') repeat-x;
+	}
+
+	.header__logo {
+		@include rem(top, -40px);
+
+		@include breakpoint(tablet-and-up) {
+			@include rem(top, -51px);
+		}
+
+	}
+
+}
+
+.post-entry--page {
+
+	p:first-child {
+		@include rem(font-size, 20px); line-height: 150%;
+	}
+
+}

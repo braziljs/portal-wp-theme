@@ -1,0 +1,59 @@
+///*------------------------------------*\
+//    #TICKER
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+$inner-border-width: 1px;
+$inner-border-color: rgba($color-white, .6);
+$inner-border-space: 5px;
+
+/* CONTAINER
+========================================================================== */
+.ticker {
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	@include rem(margin-top, 40px);
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: top right;
+	background-size: contain;
+	background-color: $color-mine-shaft;
+
+	@include breakpoint(small) {
+		background-image: none !important;
+	}
+
+	&:after {
+		content: '';
+		position: absolute; top: $inner-border-space; left: $inner-border-space;
+		pointer-events: none;
+		width: calc(100% -  #{$inner-border-space} * 2); height: calc(100% - #{$inner-border-space} * 2);
+		border: $inner-border-width solid $inner-border-color;
+	}
+
+	@include breakpoint(desktop-and-up) {
+		@include rem(margin-top, 80px);
+	}
+
+}
+
+.ticker-content {
+	position: relative;
+	@include rem(padding, 60px 30px);
+	background-color: $color-mine-shaft;
+
+	&:after {
+		content: '';
+		position: absolute; top: 0; left: 100%;
+		height: 100%; width: 30%;
+		background: url("data:image/svg+xml;base64,PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NPHN2ZyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB2aWV3Qm94PSIwIDAgMTYxIDMzNCIgc3R5bGU9ImJhY2tncm91bmQtY29sb3I6dHJhbnNwYXJlbnQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeD0iMHB4IiB5PSIwcHgiPg0JPGcgaWQ9IkxheWVyJTIwMSI+DQkJPHBhdGggZD0iTSAwIDAgTCAxNjEgMCBMIDAgMzM0IEwgMCAwIFoiIGZpbGw9InJnYigzNCwzNCwzNCkiLz4NCTwvZz4NPC9zdmc+") no-repeat;
+		// background: url("../img/backgrounds/ticker-corner-bg.svg") no-repeat;
+	}
+
+	@include breakpoint(tablet-and-up) {
+		padding-right: 0;
+	}
+
+}

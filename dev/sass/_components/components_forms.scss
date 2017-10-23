@@ -1,0 +1,57 @@
+///*------------------------------------*\
+//    #FORMS
+//\*------------------------------------*/
+
+
+/* VARIABLES
+========================================================================== */
+$input-border-color: $color-silver;
+
+/* ELEMENTS
+========================================================================== */
+.label {
+	display: block;
+	@include rem(margin-bottom, 10px);
+	@include rem(font-size, 13px); font-weight: bold; color: $color-mine-shaft; text-transform: uppercase;
+}
+
+.input {
+	position: relative;
+	z-index: $z-index-ground;
+	display: block;
+	@include rem(margin-bottom, 5px); @include rem(padding-left, 15px);
+	width: 100%; @include rem(height, 60px);
+	border: 1px solid $input-border-color;
+	@include rem(font-size, 16px);
+
+	+ .label {
+		@include rem(margin-top, 30px);
+	}
+
+}
+
+.input--textarea {
+	@include rem(padding-top, 20px);
+	@include rem(height, 180px);
+}
+
+.input-wrapper {
+	position: relative;
+	z-index: $z-index-ground;
+
+	&:after {
+		content: '';
+		position: absolute; left: 10px; bottom: -10px;
+		z-index: $z-index-underground;
+		display: inline-block;
+		width: 0; height: 0;
+		border-style: solid; border-width: 13px 0 13px 130px; border-color: transparent transparent transparent rgba(0,0,0,.2);
+	}
+
+}
+
+/* VARIATIONS
+========================================================================== */
+.contact-form {
+	@include rem(margin-bottom, 70px);
+}

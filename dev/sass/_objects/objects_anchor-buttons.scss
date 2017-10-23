@@ -1,0 +1,97 @@
+///*------------------------------------*\
+//    #ANCHOR BUTTONS
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+
+/* BUTTONS
+========================================================================== */
+.anchor-button {
+	display: inline-block;
+	@include rem(padding, 10px 20px);
+	font-family: $font-primary; @include rem(font-size, 13px); line-height: 120%; color: $color-cloud-burst; font-weight: 900; font-style: italic; text-transform: uppercase;
+	background-color: $color-white;
+	border: 1px solid $color-cloud-burst;
+	cursor: pointer;
+	transition: color ease $basic-transition, border-color ease $basic-transition, background-color ease $basic-transition;
+	transform: skew(-6deg);
+	-webkit-appearance: none;
+
+	&:hover, &:focus {
+		opacity: 1;
+		color: $color-white;
+		border-color: $color-cloud-burst;
+		background-color: $color-cloud-burst;
+		transition: color ease $basic-transition, border-color ease $basic-transition, background-color ease $basic-transition;
+	}
+
+	& + .anchor-button {
+		@include rem(margin-left, 5px);
+	}
+
+}
+
+/* COLOR VARIATIONS
+========================================================================== */
+.anchor-button--color-2 {
+	color: $color-mine-shaft;
+	border-color: $color-lightning-yellow;
+	background-color: $color-lightning-yellow;
+
+	&:hover, &:focus {
+		color: $color-lightning-yellow;
+		border-color: $color-lightning-yellow;
+		background-color: transparent;
+	}
+
+}
+
+.anchor-button--color-3 {
+	color: $color-white;
+	border-color: $color-white;
+	background-color: $color-mine-shaft;
+
+	&:hover, &:focus {
+		color: $color-mine-shaft;
+		border-color: $color-white;
+		background-color: $color-white;
+	}
+
+}
+
+.anchor-button--color-4 {
+	color: $color-white;
+	border-color: $color-cloud-burst;
+	background-color: $color-cloud-burst;
+
+	&:hover, &:focus {
+		color: $color-cloud-burst;
+		border-color: $color-white;
+		background-color: $color-white;
+	}
+
+}
+
+.anchor-button--color-5 {
+	color: $color-white;
+	border-color: $color-white;
+	background-color: transparent;
+
+	&:hover, &:focus {
+		color: $color-mine-shaft;
+		border-color: $color-mine-shaft;
+		background-color: $color-white;
+	}
+
+}
+
+/* SIZE VARIATIONS
+========================================================================== */
+.anchor-button--size-2 {
+	@include rem(font-size, 18px);
+}
+
+.anchor-button--size-3 {
+	@include rem(font-size, 11px);
+}
