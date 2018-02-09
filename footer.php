@@ -1,7 +1,6 @@
 	<div class="powered-wrapper">
 		<div class="content">
 			<span class="powered__info">BrazilJS®  é uma iniciativa <a href="https://nasc.io/?utm_source=braziljs"><strong>NASC.</strong></a></span>
-			<span class="powered__info">&nbsp; &nbsp; Hosted by <a href="https://getupcloud.com/?utm_source=braziljs"><img src="<?php asset_path('img/sponsors/logo-getupcloud.svg') ?>" alt="Getup"></a></span>
 			<div class="flow-opposite">
 				<a href="http://marimbondo.me/?utm_source=braziljs" title="Feito à mão por marimbondo"><img src="<?php asset_path('img/logos/logo-marimbondo.svg') ?>" alt="marimbondo" /><span class="visuallyhidden">Desenvolvido por marimbondo</span></a>
 			</div>
