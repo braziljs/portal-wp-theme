@@ -29,25 +29,24 @@
 
 	</script>
 
-	<!-- Facebook Pixel Code -->
+
+	<!-- Alura + BrazilJS -->
 	<script>
-	!function(f,b,e,v,n,t,s)
-	{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-	n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-	if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-	n.queue=[];t=b.createElement(e);t.async=!0;
-	t.src=v;s=b.getElementsByTagName(e)[0];
-	s.parentNode.insertBefore(t,s)}(window,document,'script',
-	'https://connect.facebook.net/en_US/fbevents.js');
-	 fbq('init', '1179239125515538');
-	fbq('track', 'PageView');
+	!function(e){var t={};t.URL="https://www.alura.com.br/api/cursos-em-destaque",t.request=function(){var e=fetch(t.URL,{method:"GET"});e.then(function(e){e.json().then(function(e){t.setCourses(e)})}),e.catch(function(e){console.error("Failed retrieving information",e)})},t.setCourses=function(e){e.cursosEmDestaque.forEach(function(e){var t=document.createElement("li"),n=document.getElementById("card-wrapper-list"),a=document.createElement("div"),d=document.createElement("div"),r=document.createElement("a"),c=document.createElement("img"),i=document.createElement("div"),i=document.createElement("div"),s=document.createElement("h3"),l=document.createElement("a");t.classList.add("article-list__item","col-4-12"),a.setAttribute("class","card"),d.setAttribute("class","card__header"),i.setAttribute("class","card__content"),r.classList.add("media-wrapper"),r.setAttribute("role","presentation"),r.setAttribute("aria-hidden","true"),r.href=e.url,c.classList.add("media-wrapper__thumb","card__thumb","card__thumb__alura"),c.style.minWidth="135px",c.src=e.icone,s.setAttribute("class","card__title"),l.innerHTML=e.nome,l.href=e.url,n.appendChild(t),t.appendChild(a),a.appendChild(d),d.appendChild(r),r.appendChild(c),a.appendChild(i),i.appendChild(s),s.appendChild(l)})},t.makeHTML=function(e){var n=document.createElement("section"),a=document.createElement("div"),d=document.createElement("div"),r=document.createElement("h2"),c=document.createElement("ul"),i=document.createElement("div"),s=document.createElement("a");"/"==location.pathname?n.style.marginTop="6.25rem":n.style.margin="6.25rem 0",a.classList.add("content"),d.classList.add("center-elements--mobile"),r.classList.add("title"),c.classList.add("row","card-wrapper"),c.id="card-wrapper-list",i.classList.add("center-elements","row"),s.classList.add("anchor-button"),s.innerHTML="veja todos os cursos",s.href="https://www.alura.com.br/braziljs",r.innerHTML="Cursos recomendados pela BrazilJS",n.appendChild(a),a.appendChild(d),d.appendChild(r),a.appendChild(c),a.appendChild(i),i.appendChild(s),null!=document.getElementById("main")&&(t.request(),document.getElementById("main").appendChild(n))},t.init=function(){var e=location.pathname;"/conf/"!=e&&"/eventos-parceiros/"!=e&&"/sobre/"!=e&&"/contato/"!=e&&t.makeHTML()},t.init()}();
 	</script>
-	<noscript>
-	 <img height="1" width="1"
-	src="https://www.facebook.com/tr?id=1179239125515538&ev=PageView
-	&noscript=1"/>
-	</noscript>
-	<!-- End Facebook Pixel Code -->
+	<!-- Alura + BrazilJS -->
+
+	<!-- Scup -->
+	<script>
+		// Use the variables below to include the name and email address of the user who is currently logged in.
+		window.scupSettings = {
+		channelAccount:"LVC_1ca83170-0aa0-11e8-ba14-c1ce6c5c20e6",
+		userName: "",
+		userEmail: ""
+		}
+		</script>
+	<script>!function(t){var e=t.createElement("script");e.src="https://api-live-chat.care.scup.com/widget",t.body.appendChild(e)}(document);</script>
+  	<!-- /Scup -->
 
 
 <?php } ?>
