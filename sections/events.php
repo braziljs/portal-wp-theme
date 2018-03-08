@@ -66,7 +66,7 @@
 					<li class="<?php echo $columnCount; ?>">
 						<div class="card card--type-2">
 							<div class="card__header">
-								<a href="<?php the_field('url') ?>" class="media-wrapper" aria-hidden="true" role="presentation" tabindex="-1">
+								<a href="<?php the_permalink() ?>" class="media-wrapper" aria-hidden="true" role="presentation" tabindex="-1">
 									<img class="card__thumb" src="<?php echo $imageLink[0]; ?>" alt="<?php echo $imageAlt ?>" />
 								</a>
 								<?php if ($timeCount): ?>
@@ -75,7 +75,7 @@
 							</div>
 							<div class="card__content">
 								<span class="card__label"><?php echo $eventDay; ?> de <?php echo $eventMonth; ?> <?php echo $eventYear; ?></span>
-								<h3 class="card__title"><a href="<?php the_field('url') ?>"><?php the_title(); ?></a></h3>
+								<h3 class="card__title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
 								<div class="card__paragraph"><?php the_content() ?></div>
 							</div>
 						</div>

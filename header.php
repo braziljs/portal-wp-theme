@@ -23,7 +23,7 @@
 
 	<link rel="dns-prefetch" href="//www.google-analytics.com">
 	<link href='https://fonts.gstatic.com' rel='preconnect' crossorigin>
-	<link href='https://fonts.googleapis.com/css?family=Lato:400,700,900i%7CLora:400,400i,700i' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,400i,700,900i%7CLora:400,400i,700i' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="<?php asset_path('css/main.css') ?>" />
 

@@ -1,0 +1,151 @@
+{% for event in events %}
+
+	{% if event.usar_tema %}
+
+		{% set theme = event.get_field('tema') %}
+		{% set themeName = theme ? theme.name|lower : '' %}
+
+		{% if theme %}
+			<link rel="stylesheet" href="{{theme.get_field('arquivo_css')}}" />
+		{% endif %}
+
+	{% endif %}
+
+	<div id="js-conf-page" class="conf-wrapper {{ themeName }}">
+		<div class="content">
+			<img class="header__logo" src="{{ function('asset_path', 'img/logos/braziljs.svg') }}" alt="BrazilJS" />
+		</div>
+		<main id="main">
+			<div class="conf-header" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0, 0, 0, 1)), url({{TimberImage(event.background).src}});">
+				<div class="center-elements">
+					<h1 class="conf-header__title title title--type-2 title--size-2 title--color-2">{{event.name}}</h1>
+				</div>
+				<div class="content">
+					<div class="conf-container__events">
+						<div class="conf-container__logo">
+							<img src="{{TimberImage(event.logo).src}}" alt="{{TimberImage(event.logo).alt}}" />
+						</div>
+						<div class="conf-info-wrapper">
+							<div class="conf-info-container">
+								<strong class="conf-info-container__info">{{event.informacao_extra}}</strong>
+								<strong class="conf-info-container__info conf-info-container__info--locale">{{event.cidade}}</strong>
+							</div>
+
+							{% if event.habilitar_ingresso %}
+								<div class="conf-container__ticket">
+									<script src="https://embedstore.ingresse.com/ingresse-widget.js"></script>
+									<div class="ingresse-widget" data-eventid="{{event.id_ingresse}}">
+										<button id="embedstore-btn" type="button" class="anchor-button anchor-button--size-2 anchor-button--color-5 conf-container__date">Comprar Ingressos</button>
+									</div>
+								</div>
+							{% endif %}
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	{% if event.palestrantes %}
+		<section class="section-wrapper speakers-list-container">
+			<div class="content">
+				<div class="center-elements">
+					<h2 class="title title--type-2" id="speakers-title">Palestrantes</h2>
+				</div>
+				<ul class="post-content-wrapper center-elements--mobile" aria-labelledby="speakers-title">
+
+					{% set speakers = event.get_field('palestrantes') %}
+
+					{% for speaker in speakers %}
+						<li class="col-5-12 calendar-list__item">
+							<div class="card card--type-2">
+								<div class="card__header">
+									<div class="media-wrapper">
+										<img class="card__thumb" src="{{ speaker.thumbnail.src()}}" alt="{{ speaker.thumbnail.alt}}" />
+									</div>
+									{% if speaker.keynote %}
+										<strong class="card__ribbon"><span class="card__ribbon-text">Keynote</span></strong>
+									{% endif %}
+								</div>
+								<div class="card__content">
+									<h3 class="card__title">{{speaker.title}}</h3>
+									<strong class="card__subtitle">{{speaker.empresa}}</strong>
+									<div class="card__paragraph">{{speaker.content}}</div>
+								</div>
+							</div>
+						</li>
+
+					{% endfor %}
+				</ul>
+			</div>
+		</section>
+	{% endif %}
+
+
+
+
+	{% if event.habilitar_agenda == true %}
+		<section class="section-wrapper">
+			<div class="content">
+				<div class="center-elements">
+					<h2 class="title title--type-2">Programação</h2>
+				</div>
+				<div id="js-schedule-container">
+					<div class="schedule-day-container row">
+
+						{% set agenda = event.get_field('agenda') %}
+
+						{% for day in agenda.get_field('dia') %}
+
+							{% set agendaDaysClass = day|length > 2 ? 'col-6-12' : ''%}
+
+							<div class="{{agendaDaysClass}} schedule__list-container">
+								<h3 class="schedule__header">{{day.data_do_dia}}</h3>
+								<ul class="schedule__list">
+
+									{% for speakers in day.palestras %}
+									<li class="schedule__item">
+										{% set speaker = speakers.palestrante %}
+										<time class="schedule__time">{{ speakers.horario }}</time>
+
+										{% if speakers.palestra %}
+
+											{% if speaker.keynote %}
+												<span class="schedule__keynote">keynote</span>
+											{% endif %}
+
+											<h4 class="schedule__title"><button class="schedule__title-button">{{speaker.nome_da_palestra}}</button></h4>
+											<div class="schedule__about">
+												<div class="paragraph">
+													{{speaker.descrição_da_palestra}}
+												</div>
+											</div>
+											<div>
+												<img class="schedule__author-thumb" alt="" src="{{ speaker.thumbnail.src()}}">
+												<strong class="schedule__author">{{speaker.name}}</strong>
+											</div>
+
+										{% else %}
+
+											<h4 class="schedule__title">{{speakers.texto_do_horario}}</h4>
+
+										{% endif %}
+
+									</li>
+									{% endfor %}
+
+								</ul>
+							</div>
+
+						{% endfor %}
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+	{% endif %}
+
+{% endfor %}

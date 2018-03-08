@@ -5,6 +5,98 @@
 /* VARIABLES
 ========================================================================== */
 
+
+/* HEADER
+========================================================================== */
+.conf-header {
+	position: relative;
+	@include rem(padding-top, 175px);
+	width: 100%;
+	background-size: cover; background-position: top;
+
+	@include breakpoint(small) {
+		@include rem(padding-top, 130px);
+	}
+
+}
+
+.conf-header__title {
+	@include rem(margin-bottom, 120px);
+
+	@include breakpoint(small) {
+		@include rem(margin-bottom, 40px);
+	}
+
+}
+
+.conf-header__logo {
+	@include rem(margin-bottom, 40px);
+}
+
+
+.conf-container__events {
+	position: relative; @include rem(top, 25px);
+	display: flex;
+	@include rem(padding, 0 80px);
+	width: 100%; height: auto;
+
+	@include breakpoint(small) {
+		position: static;
+		flex-direction: column; align-items: center;
+		padding: 0;
+	}
+
+}
+
+.conf-container__logo {
+	display: flex; flex: 1 0 auto;
+	@include rem(width, 140px); @include rem(height, 140px);
+	border: 5px solid rgb(255,255,255);
+	background-color: rgb(240,240,240);
+}
+
+/* CONF INFO
+========================================================================== */
+.conf-info-wrapper {
+	display: flex;
+	@include rem(padding-top, 20px); @include rem(padding-left, 20px);
+	width: 100%;
+
+	@include breakpoint(small) {
+		flex-direction: column; align-items: center;
+		padding: 0;
+		text-align: center;
+	}
+
+}
+
+.conf-info-container {
+	@include breakpoint(small) {
+		@include rem(margin, 20px 0);
+	}
+}
+
+.conf-info-container__info {
+	position: relative; z-index: $z-index-jump;
+	display: block;
+    @include rem(font-size, 20px); line-height: 130%; color: $color-white; text-transform: uppercase; font-style: italic;
+}
+
+.conf-info-container__info--locale {
+	font-weight: normal;
+}
+
+.conf-container__ticket {
+	margin-left: auto;
+
+	@include breakpoint(small) {
+		margin-left: 0;
+	}
+
+}
+
+/* SCHEDULE CALENDAR
+========================================================================== */
 .calendar-list__item {
 
 	&:nth-child(odd) {
