@@ -148,4 +148,56 @@
 
 	{% endif %}
 
+
+	{% if event.patrocinio_habilitar == true %}
+		<section class="section-wrapper--type-3">
+			<div class="content">
+				<div class="center-elements">
+					<h2 class="title title--type-2">Patrocinadores {{event.title}}</h2>
+					<p class="sponsor-list__paragraph paragraph paragraph--font-2 paragraph--size-2 paragraph--color-3">{{event.patrocinio_mensagem_apoio}}</p>
+				</div>
+
+				{% if event.patrocinio_cotas %}
+
+					<ul>
+
+						{% for cota in event.get_field('patrocinio_cotas') %}
+
+							<li>
+
+								<h3 class="subtitle subtitle--type-2">{{cota.patrocinio_cotas_nome}}</h3>
+
+								{% if cota.patrocinio_cotas_patrocinios %}
+
+									<ul>
+
+										{% for sponsor in cota.patrocinio_cotas_patrocinios[0].patrocinio_cotas_patrocinios_patrocinio %}
+
+											<li class="sponsor-list__item">
+												<a class="sponsor-list__anchor" href="{{sponsor.url}}"><img class="sponsor-list__thumb" src="{{sponsor.thumbnail.src()}}" alt="{{sponsor.title}}"/></a>
+											</li>
+
+										{% endfor %}
+
+									</ul>
+
+								{% endif %}
+
+							</li>
+
+						{% endfor %}
+
+					</ul>
+
+				{% endif %}
+
+			</div>
+		</section>
+
+	{% else %}
+
+		{{ function('get_template_part', 'sections/sponsors') }}
+
+	{% endif %}
+
 {% endfor %}
