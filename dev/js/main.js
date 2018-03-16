@@ -18,7 +18,8 @@
                 'disqusLoader': 'plugins/disqusloader',
                 'confSchedule': 'modules/conf-schedule',
                 'prism': 'plugins/prism',
-                'trap': 'plugins/trap'
+                'trap': 'plugins/trap',
+                'brjsAlura': 'modules/brjsAlura'
             }
         });
 
@@ -35,6 +36,8 @@
         PUBLIC.article();
 
         PUBLIC.confSchedule();
+
+        PUBLIC.brjsAlura();
 
         //PUBLIC.conf();
 
@@ -82,6 +85,15 @@
             require(['confSchedule'])
         }
 
+    };
+
+    PUBLIC.brjsAlura = function () {
+
+        var brjsAlura = document.getElementById('braziljs_alura');
+
+        if (brjsAlura) {
+            require(['brjsAlura'])
+        }
     };
 
     // PUBLIC.conf = function () {

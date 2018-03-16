@@ -5,6 +5,9 @@
 	<div class="content">
 		<?php get_template_part('sections/latest-news'); ?>
 		<?php get_template_part('sections/ticker'); ?>
+		<div class="courses_recommended">
+			<?php get_template_part('sections/alura-course'); ?>
+		</div>
 	</div>
 </main>
 <?php get_template_part('sections/weekly'); ?>

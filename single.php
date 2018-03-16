@@ -60,6 +60,13 @@
 			</div>
 		</div>
 	</div>
+	
+	<div class="section-wrapper">
+		<div class="content">
+			<?php get_template_part('sections/alura-course'); ?>
+		</div>
+	</div>
+	
 	<?php $ticker = get_field('ticker_habilitado', 'option'); ?>
 	<?php if($ticker): ?>
 		<div class="section-wrapper">
