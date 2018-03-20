@@ -38,6 +38,8 @@ Template Name: Eventos
 	</div>
 <?php endif; ?>
 
+
+
 <?php
 	$args = array(
 		'post_type' => 'eventos',
@@ -69,13 +71,13 @@ Template Name: Eventos
 						<li class="col-5-12 calendar-list__item">
 							<div class="card card--type-2">
 								<div class="card__header">
-									<a href="<?php the_field('url') ?>" class="media-wrapper" aria-hidden="true" role="presentation" tabindex="-1">
+									<a href="<?php the_permalink() ?>" class="media-wrapper" aria-hidden="true" role="presentation" tabindex="-1">
 										<img class="card__thumb" src="<?php echo $imageLink[0]; ?>" alt="<?php echo $imageAlt ?>" />
 									</a>
 								</div>
 								<div class="card__content">
 									<span class="card__label"><?php echo $eventDay; ?> de <?php echo $eventMonth; ?> <?php echo $eventYear; ?></span>
-									<h2 class="card__title"><a href="<?php the_field('url') ?>"><?php the_title(); ?></a></h2>
+									<h2 class="card__title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 									<div class="card__paragraph"><?php the_content() ?></div>
 								</div>
 							</div>

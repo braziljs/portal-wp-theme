@@ -86,7 +86,7 @@
 				<?php endwhile; ?>
 			</ul>
 			<div class="row center-elements">
-				<a href="<?php bloginfo('url'); ?>/eventos-parceiros" class="anchor-button">Veja todos os eventos parceiros</a>
+				<a href="<?php bloginfo('url'); ?>/eventos" class="anchor-button">Veja todos os eventos</a>
 			</div>
 		</div>
 	</section>
