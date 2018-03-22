@@ -219,6 +219,8 @@ $yellow: #ffdd16;
 
 
 .helper__main {
+	position: relative;
+
 	section {
 	  .speaker__grid {
 	    margin-bottom: 30px;
@@ -408,6 +410,17 @@ $yellow: #ffdd16;
 	    }
 	  }
 	}
+
+	.made-by-g {
+		bottom: 15px;
+		font-size: 0.675rem;
+		position: absolute;
+
+		a {
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+	}
 }
 
 .hospedagem__wrapper {
@@ -460,7 +473,6 @@ $yellow: #ffdd16;
     }
 	}
 }
-
 
 
 @media screen and (max-width: 639px) {

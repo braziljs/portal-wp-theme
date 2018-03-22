@@ -8,7 +8,7 @@ define(function () {
 	conf = {
 
 		init: function () {
-			
+
 			setInterval(function() {
 				conf.countDownClock();
 			}, 1000);

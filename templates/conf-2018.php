@@ -180,6 +180,12 @@ Template Name: Conf 2018 Teaser
       </div>
     </section>
   </div>
+
+  <div class="content">
+    <div class="made-by-g">
+      Made by <a target="__blank" href="http://asgabe.github.io/?utm_source=braziljs">Gabe</a>!
+    </div>
+  </div>
 </main>
 
 <section class="hospedagem__wrapper" id="hospedagem">
