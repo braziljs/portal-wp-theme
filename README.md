@@ -8,4 +8,4 @@
 4. To build the necessary assets for production environment, use the command "gulp build" in the terminal.
 
 ## Deploy
-scp -r [!node_modules/]* ./ braziljs-wp:/var/www/html/wp-content/themes/portal-wp-theme-master/
+rsync -r --exclude=node_modules/ --exclude=.git ./ braziljs-wp:/var/www/html/wp-content/themes/portal-wp-theme-master/
