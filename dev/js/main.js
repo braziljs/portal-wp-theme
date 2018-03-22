@@ -14,7 +14,7 @@
                 'skipLinks': 'modules/skip-links',
                 'navigation': 'modules/navigation',
                 'article': 'modules/article',
-                //'conf': 'modules/conf',
+                'conf': 'modules/conf',
                 'disqusLoader': 'plugins/disqusloader',
                 'confSchedule': 'modules/conf-schedule',
                 'prism': 'plugins/prism',
@@ -39,7 +39,7 @@
 
         PUBLIC.brjsAlura();
 
-        //PUBLIC.conf();
+        PUBLIC.conf();
 
 	};
 
@@ -48,9 +48,7 @@
         var skipLinksContainer = document.getElementById('js-skip-links');
 
         if (skipLinksContainer) {
-
             require(['skipLinks']);
-
         }
 
     };
@@ -60,9 +58,7 @@
         var navigationContainer = document.getElementById('js-navigation-wrapper');
 
         if (navigationContainer) {
-
             require(['navigation']);
-
         }
 
     };
@@ -96,15 +92,15 @@
         }
     };
 
-    // PUBLIC.conf = function () {
+    PUBLIC.conf = function () {
 
-    //     var confPageContainer = document.getElementById('js-conf-page');
+        var confPageContainer = document.getElementById('js-conf-teaser');
+        
+        if (confPageContainer) {
+            require(['conf'])
+        }
 
-    //     if (confPageContainer) {
-    //         require(['conf'])
-    //     }
-
-    // };
+    };
 
     return PRIVATE.init();
 

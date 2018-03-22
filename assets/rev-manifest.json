@@ -1,10 +1,15 @@
 {
-  "css/main.css": "css/main-5f8f341c00.css",
+  "css/main.css": "css/main-ef7d0eeb6f.css",
   "img/backgrounds/bg-wrapper--3.png": "img/backgrounds/bg-wrapper--3-1c86696607.png",
   "img/backgrounds/bg-wrapper--5.png": "img/backgrounds/bg-wrapper--5-5559ad6cda.png",
   "img/backgrounds/header-bg-2.jpg": "img/backgrounds/header-bg-2-cd512cefaf.jpg",
   "img/backgrounds/header-bg.jpg": "img/backgrounds/header-bg-bc8bd97bd1.jpg",
   "img/backgrounds/ticker-corner-bg.svg": "img/backgrounds/ticker-corner-bg-e375aac645.svg",
+  "img/conf/avatar/icon-1-opt-avatar.svg": "img/conf/avatar/icon-1-opt-avatar-e623d5a461.svg",
+  "img/conf/avatar/icon-2-opt-avatar.svg": "img/conf/avatar/icon-2-opt-avatar-2162437a78.svg",
+  "img/conf/avatar/icon-3-opt-avatar.svg": "img/conf/avatar/icon-3-opt-avatar-54aee5eacc.svg",
+  "img/conf/avatar/icon-4-opt-avatar.svg": "img/conf/avatar/icon-4-opt-avatar-7b459c8a72.svg",
+  "img/conf/avatar/icon-5-opt-avatar.svg": "img/conf/avatar/icon-5-opt-avatar-0be59dbbe8.svg",
   "img/conf/fortaleza-vertical--small.jpg": "img/conf/fortaleza-vertical--small-76bbcaff3b.jpg",
   "img/conf/fortaleza-vertical.jpg": "img/conf/fortaleza-vertical-24c675bba3.jpg",
   "img/conf/poa-teaser-2018.jpg": "img/conf/poa-teaser-2018-472df9d034.jpg",
@@ -70,5 +75,5 @@
   "img/thumb-generica-2.jpg": "img/thumb-generica-2-d08ab00929.jpg",
   "img/thumb-generica.jpg": "img/thumb-generica-c80a3665cb.jpg",
   "img/thumb-generica.png": "img/thumb-generica-e6a8d8412e.png",
-  "js/main.js": "js/main-0ed8c099e8.js"
+  "js/main.js": "js/main-503a6a53eb.js"
 }

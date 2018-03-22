@@ -1,64 +1,83 @@
 define(function () {
 
 	var conf = {},
-		confContainer = $('#js-conf-page'),
-		countdownContainer = $('#js-countdown');
+		body = $('body'),
+		countdownContainer = $('#brjs-countdown');
 
 
 	conf = {
 
 		init: function () {
-
-			if (countdownContainer.length) {
+			
+			setInterval(function() {
 				conf.countDownClock();
-			}
+			}, 1000);
 
+	    setInterval(function() {
+	      conf.avatarCall4Paper();
+	    }, 2000);
 		},
 
 		countDownClock: function () {
 
-			// Set the date we're counting down to
-			var countDownDate = new Date("Apr 3, 2017 00:00:00").getTime(),
-				clock = document.getElementById('js-countdown'),
-				daysSpan = clock.querySelector('.days'),
-				hoursSpan = clock.querySelector('.hours'),
-				minutesSpan = clock.querySelector('.minutes'),
-				secondsSpan = clock.querySelector('.seconds');
+	    var YY = 2018;
+	    var MM = 08;
+	    var DD = 24;
+	    var HH = 00;
+	    var MI = 00;
+	    var SS = 00;
 
-			// Update the count down every 1 second
-			var timeInterval = setInterval(function() {
 
-				// Get todays date and time
-			  	var now = new Date().getTime();
+	    var today = new Date();
+	    var further = new Date(YY, MM-1, DD, HH, MI, SS);
 
-				// Find the distance between now an the count down date
-				var distance = countDownDate - now;
+	    var ss = parseInt((further - today) / 1000);
+	    var mm = parseInt(ss / 60);
+	    var hh = parseInt(mm / 60);
+	    var dd = parseInt(hh / 24);
 
-				// Time calculations for days, hours, minutes and seconds
-				var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-				var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-				var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-				var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+	    var missing = '';
 
-				daysSpan.innerHTML = days.toString().length > 1 ? days : '0' + days;
-				hoursSpan.innerHTML = hours.toString().length > 1 ? hours : '0' + hours;
-				minutesSpan.innerHTML = minutes.toString().length > 1 ? minutes : '0' + minutes;
-				secondsSpan.innerHTML = seconds.toString().length > 1 ? seconds : '0' + seconds;
+	    ss = ss - (mm * 60);
+	    mm = mm - (hh * 60);
+	    hh = hh - (dd * 24);
 
-				// If the count down is finished, write some text
-				if (distance < 0) {
-					clearInterval(timeInterval);
-					clock.innerHTML = '<a href="https://eventloop.com.br/braziljs-conf-2017-poa" class="anchor-button anchor-button--size-2 anchor-button--color-5 conf-container__date">Comprar o ingresso!</a>';
-				}
+	    day    = (dd && dd > 1) ? dd : "";
+	    hour   = (toString(hh).length) ? (hh < 10 ? "0" + hh : hh) : "";
+	    minut  = (toString(mm).length) ? (mm < 10 ? "0" + mm : mm) : "";
+	    second = (ss < 10 ? "0" + ss : ss);
 
-			}, 1000);
+	    if (dd + hh + mm + ss > 0) {
 
-		}
+	      $("#dd").html(day);
+	      $("#hh").html(hour);
+	      $("#mm").html(minut);
+	      $("#ss").html(second);
+	    } else {
+	      // document.getElementById("elm-timer").innerHTML = 'CHEGOU!!!!';
+	      // setTimeout(Timer, 1000);
+	    }
 
+	    countdownContainer.fadeIn("slow");
+		},
+
+    avatarCall4Paper: function () {
+
+    	var img = new Image();
+    	var el = $("#bg-call4paper");
+      var imageId = (Math.floor(Math.random() * (5))+1);
+
+      const IMG_URL = "https://braziljs.org/wp-content/uploads/2018/02/icon-" + imageId + "-opt-avatar.svg";
+   
+      
+      img.onload = function () {
+        el.css('backgroundImage', 'url(' + IMG_URL + ')');
+      }
+
+      img.src = IMG_URL
+    }
 	}
 
-	if (confContainer.length) {
-		conf.init();
-	}
+	conf.init();
 
 });
