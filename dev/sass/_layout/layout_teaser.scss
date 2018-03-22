@@ -54,7 +54,7 @@ $yellow: #ffdd16;
 ========================================================================== */
 
 .helper__header {
-	height: 40rem;
+	height: auto;
   position: relative;
 	background-size: cover;
 	background-position: center;
@@ -477,7 +477,11 @@ $yellow: #ffdd16;
 
 @media screen and (max-width: 639px) {
 	.helper__header {
-		height: 60rem;
+		height: auto;
+
+		.header-content {
+			padding-top: 6.8125rem;
+		}
 
 		.timer__brjs {
 			width: 100%;

@@ -25,7 +25,7 @@ Template Name: Conf 2018 Teaser
       <img src="<?php asset_path('img/logos/braziljs.svg') ?>" alt="BrazilJS" />
     </h1>
 
-    <div class="row">
+    <div class="row" style="margin-bottom:50px;">
       <div class="header__info">
         <div class="__date">
           <p>24 e 25 de AGOSTO</p>
