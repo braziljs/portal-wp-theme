@@ -1,4 +1,4 @@
-<!-- CALL FOR PAPPERS -->
+<!-- CALL FOR PAPERS -->
 <section class="section-wrapper--type-5 bottom">
 	<div class="content">
 		<div class="center-elements">
@@ -8,4 +8,4 @@
 		</div>
 	</div>
 </section>
-<!-- END CALL FOR PAPPERS -->
+<!-- END CALL FOR PAPERS -->
