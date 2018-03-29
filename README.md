@@ -1,12 +1,17 @@
-#  BrazilJS Portal Theme
+# BrazilJS Portal Theme
 
 Tema Wordpress BrazilJS
 
-## Dependências
+## Duplicator -  Migrations & Backups
 
-1. Apache2
-2. MySQL
-3. Phpmyadmin
+> Duplicador dá aos usuários do WordPress a capacidade de migrar, copiar, mover ou clonar  um site de um local para outro e também serve como um utilitário de backup simples. O duplicador  manipula a substituição de seqüência serializada e serializada de base64. A migração padrão do WordPress e os backups do WordPress são facilmente manipulados por este plugin, assim como as migrações de inatividade zero.
+
+
+#### Dependências
+
++ Apache2
++ MySQL
++ Phpmyadmin
 
 ## How to use:
 
@@ -16,4 +21,5 @@ Tema Wordpress BrazilJS
 4. To build the necessary assets for production environment, use the command "gulp build" in the terminal.
 
 ## Deploy
+
 rsync -r --exclude=node_modules/ --exclude=.git ./ braziljs-wp:/var/www/html/wp-content/themes/portal-wp-theme-master/
