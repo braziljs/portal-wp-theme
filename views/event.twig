@@ -148,18 +148,35 @@
 
 	{% endif %}
 
-	{% if event.pappers_habilitar == true %}
+	{% if event.sobre_habilitar == true %}
 		<section class="section-wrapper--type-3">
-			<div class="content">
-				<div class="center-elements">
-					<h2 class="title title--type-2">Call For Papers</h2>
-					<p class="sponsor-list__paragraph paragraph paragraph--font-2 paragraph--size-2 paragraph--color-3">{{event.pappers_descricao}}</p>
-					<a class="anchor-button" href="{{event.pappers_url}}">Saiba mais <span class="visuallyhidden">sobre o call for papers</span></a>
+			<div class="content center-elements--mobile">
+				<div class="col-8-12">
+					<h2 class="title">Sobre o evento</h2>
+					<p class="paragraph">{{ event.sobre_descricao }}</p>
+				</div>
+				<div class="col-4-12">
+					<h2 class="subtitle subtitle--color-2">Endereço</h2>
+					<div class="paragraph">{{event.get_field('sobre_endereco')}}</div>
+					<a class="anchor-button anchor-button--color-2" href="{{ event.sobre_link_mapa }}">Ver no mapa</a>
 				</div>
 			</div>
 		</section>
 	{% endif %}
 
+	{% if event.pappers_habilitar == true %}
+		<section class="section-wrapper--type-3">
+			<div class="content">
+				<div class="center-elements">
+					<h2 class="title title--type-2">Call For Papers</h2>
+
+					<div class="sponsor-list__paragraph paragraph paragraph--font-2 paragraph--size-2 paragraph--color-3">{{event.get_field('pappers_descricao')}}</div>
+
+					<a class="anchor-button" href="{{event.pappers_url}}">Saiba mais <span class="visuallyhidden">sobre o call for papers</span></a>
+				</div>
+			</div>
+		</section>
+	{% endif %}
 
 	{% if event.patrocinio_habilitar == true %}
 		<section class="section-wrapper--type-3">
