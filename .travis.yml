@@ -3,5 +3,5 @@ sudo: required
 dist: trusty
 node_js: stable
 before_script:
-  - "gulp build"
+  - "npm run build"
   #  - "rsync -r --exclude=node_modules/ --exclude=.git ./ braziljs-wp:/var/www/html/wp-content/themes/portal-wp-theme-master/"
