@@ -1,0 +1,228 @@
+Last login: Thu Mar 29 14:43:38 on ttys001
+nasc-hq:~ gabriel$ jenkis --version
+-bash: jenkis: command not found
+nasc-hq:~ gabriel$ jenkins --version
+-bash: jenkins: command not found
+nasc-hq:~ gabriel$
+nasc-hq:~ gabriel$ docker run \
+> -u root
+"docker run" requires at least 1 argument.
+See 'docker run --help'.
+
+Usage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...] [flags]
+
+Run a command in a new container
+nasc-hq:~ gabriel$ docker run -u root
+nasc-hq:~ gabriel$ docker run \
+> -u root \
+> --rm \
+> -d \
+> -p 8082:8082 \
+> -p 5000:5000 \
+> -v jenkins-data:/var/jenkins_home \
+> -v /var/run/docker.sock:/var/run/docker.sock \
+> jenkinsci/blueocean
+Unable to find image 'jenkinsci/blueocean:latest' locally
+latest: Pulling from jenkinsci/blueocean
+ff3a5c916c92: Pull complete
+5de5f69f42d7: Pull complete
+fd869c8b9b59: Pull complete
+02518cd78fce: Pull complete
+d3d05117f906: Pull complete
+c53e309b9e72: Pull complete
+aafc92882844: Pull complete
+580bfec2f1d9: Pull complete
+a444405b54db: Pull complete
+4a0394763962: Pull complete
+3ed8d5113e79: Pull complete
+0504ff72fa3b: Pull complete
+178e37078501: Pull complete
+077664eee08e: Pull complete
+c0009fb8eb22: Pull complete
+3e530d0e6d3a: Downloading  63.24MB/75.37MB
+^C
+nasc-hq:~ gabriel$
+nasc-hq:~ gabriel$
+nasc-hq:~ gabriel$ docker run -u root --rm -d -p 8082:8082 -p 5000:5000 -v jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkinsci/blueocean
+nasc-hq:~ gabriel$ docker run -u root --rm -d -p 3456:8080 -p 5000:5000 -v jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkinsci/blueocean
+Unable to find image 'jenkinsci/blueocean:latest' locally
+latest: Pulling from jenkinsci/blueocean
+ff3a5c916c92: Pull complete
+5de5f69f42d7: Pull complete
+fd869c8b9b59: Downloading   16.7MB/70.23MB
+02518cd78fce: Downloading  16.62MB/23.2MB
+d3d05117f906: Download complete
+c53e309b9e72: Download complete
+aafc92882844: Download complete
+580bfec2f1d9: Downloading  9.698MB/74.33MB
+a444405b54db: Waiting
+4a0394763962: Waiting
+3ed8d5113e79: Waiting
+0504ff72fa3b: Waiting
+178e37078501: Waiting
+077664eee08e: Waiting
+c0009fb8eb22: Waiting
+3e530d0e6d3a: Waiting
+^C
+nasc-hq:~ gabriel$
+nasc-hq:~ gabriel$
+nasc-hq:~ gabriel$
+nasc-hq:~ gabriel$
+nasc-hq:~ gabriel$
+nasc-hq:~ gabriel$
+nasc-hq:~ gabriel$
+nasc-hq:~ gabriel$ cd ..
+nasc-hq:Users gabriel$ cd ..
+nasc-hq:/ gabriel$ cd Library/WebServer/Documents/_www/braziljs/
+.htaccess
+.htaccess.180317054531.orig
+20180209_braziljs_51427b3f6bb819221854180314161413_archive.zip
+database.sql
+index.php
+installer-backup.php
+installer-data.sql
+installer-log.txt
+installer.php
+license.txt
+readme.html
+web.config
+wp-activate.php
+wp-admin/
+wp-blog-header.php
+wp-comments-post.php
+wp-config-sample.php
+wp-config.php
+wp-content/
+wp-cron.php
+wp-includes/
+wp-links-opml.php
+wp-load.php
+wp-login.php
+nasc-hq:/ gabriel$ cd Library/WebServer/Documents/_www/braziljs/
+.htaccess
+.htaccess.180317054531.orig
+20180209_braziljs_51427b3f6bb819221854180314161413_archive.zip
+database.sql
+index.php
+installer-backup.php
+installer-data.sql
+installer-log.txt
+installer.php
+license.txt
+readme.html
+web.config
+wp-activate.php
+wp-admin/
+wp-blog-header.php
+wp-comments-post.php
+wp-config-sample.php
+wp-config.php
+wp-content/
+wp-cron.php
+wp-includes/
+wp-links-opml.php
+wp-load.php
+wp-login.php
+nasc-hq:/ gabriel$ cd Library/WebServer/Documents/_www/braziljs/wp-con
+wp-config-sample.php  wp-config.php         wp-content/
+nasc-hq:/ gabriel$ cd Library/WebServer/Documents/_www/braziljs/wp-content/
+advanced-cache.php  mu-plugins/         uploads/
+cache/              plugins/            w3tc-config/
+index.php           themes/
+languages/          upgrade/
+nasc-hq:/ gabriel$ cd Library/WebServer/Documents/_www/braziljs/wp-content/themes/portal-wp-theme
+nasc-hq:portal-wp-theme gabriel$
+dist: trusty
+node_js: stable
+addons:
+  firefox: latest
+  apt:
+    sources:
+    - google-chrome
+    packages:
+    - google-chrome-stable
+    - xvfb
+cache:
+  directories:
+  - node_modules
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+#  - sleep 3 # give xvfb some time to start
+#  - "npm run try"
+#  - sleep 3 # give server some time to start
+script:
+   - "npm run test"
+#- xvfb-run wct
+#- if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then wct -s default; fi
+after_script:
+-- INSERT --                                                  26,14         Bot
+dist: trusty
+node_js: stable
+addons:
+  firefox: latest
+  apt:
+    sources:
+    - google-chrome
+    packages:
+    - google-chrome-stable
+    - xvfb
+cache:
+  directories:
+  - node_modules
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+#  - sleep 3 # give xvfb some time to start
+#  - "npm run try"
+#  - sleep 3 # give server some time to start
+script:
+   - "npm run test"
+#- xvfb-run wct
+#- if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then wct -s default; fi
+after_script:
+-- INSERT --                                                   26,14         Bot
+sudo: false
+dist: trusty
+node_js: stable
+addons:
+  chrome: latest
+before_script:
+  - "rsync -r --exclude=node_modules/ --exclude=.git ./ braziljs-wp:/var/www/html/wp-content/themes/portal-wp-theme-master/"
+script:
+  #   - "npm run test"
+after_script:
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+E78: Unknown mark                                                                                                                                                  10,12         All
