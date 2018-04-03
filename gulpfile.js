@@ -148,8 +148,10 @@ gulp.task('default', function() {
 });
 
 //Build the complete site inside the "build" folder
-gulp.task('build', function() {
+gulp.task('build', function(callback) {
 
- 	runSequence('clean', 'minifyCSS', 'scripts', 'webp', 'imageMin', 'copy', 'rev');
+ 	runSequence('clean', 'minifyCSS', 'scripts', 'webp', 'imageMin', 'copy', 'rev', function () {
+ 		process.exit(0);
+ 	});
 
 });
