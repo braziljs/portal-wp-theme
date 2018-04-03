@@ -2,7 +2,7 @@
   "name": "braziljs-style-guide",
   "version": "0.0.1",
   "scripts": {
-    "build": "sudo gulp build"
+    "build": "gulp build"
   },
   "dependencies": {
     "@frctl/fractal": "^1.0.11",
