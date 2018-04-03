@@ -1,4 +1,4 @@
-language: php
+language: node_js
 sudo: required
 dist: trusty
 before_script:
