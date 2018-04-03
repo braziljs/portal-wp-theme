@@ -1,5 +1,6 @@
 language: php
-sudo: false
+sudo: required
 dist: trusty
 script:
-  - "rsync -r --exclude=node_modules/ --exclude=.git ./ braziljs-wp:/var/www/html/wp-content/themes/portal-wp-theme-master/"
+  - "gulp build"
+  #  - "rsync -r --exclude=node_modules/ --exclude=.git ./ braziljs-wp:/var/www/html/wp-content/themes/portal-wp-theme-master/"
