@@ -6,12 +6,16 @@ addons:
   ssh_know_host: "˜/.ssh/ssh_known_hosts"
 before_script:
   - "npm install -g gulp-cli"
-# - openssl aes-256-cbc -K $encrypted_99d98d3b8275_key -iv $encrypted_99d98d3b8275_iv -in deploy_rsa.enc -out deploy_rsa -d
-# - eval "$(ssh-agent -s)"
-# - chmod 600 deploy_rsa
-# - chmod 600 deploy_rsa
-script: 
-  - "npm run build"
+  # - "openssl aes-256-cbc -K $encrypted_99d98d3b8275_key -iv $encrypted_99d98d3b8275_iv -in deploy_rsa.enc -out deploy_rsa -d"
+  # - "eval '$(ssh-agent -s)'"
+  # - "chmod 600 deploy_rsa"
+  # - "chmod 600 deploy_rsa"
+script:
+  provider: script
+  skip_cleanup: true
+  script: "npm run build"
+  on:
+    branch: master
 cache:
   directories:
     - node_modules
