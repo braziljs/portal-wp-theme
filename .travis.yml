@@ -12,8 +12,6 @@ before_script:
   # - "chmod 600 deploy_rsa"
 script:
   - "npm run build"
-  on:
-    branch: master
 cache:
   directories:
     - node_modules
