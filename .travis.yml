@@ -2,6 +2,9 @@ language: node_js
 sudo: required
 dist: trusty
 node_js: stable
+cache:
+  directories:
+    - "node_modules"
 before_script:
-  - "npm run build"
-  #  - "rsync -r --exclude=node_modules/ --exclude=.git ./ braziljs-wp:/var/www/html/wp-content/themes/portal-wp-theme-master/"
+  - "npm install -g gulp-cli"
+script: "npm run build"
