@@ -10,7 +10,7 @@ script:
 cache:
   directories:
     - node_modules
-after_install:
+after_script:
 - openssl aes-256-cbc -K $encrypted_99d98d3b8275_key -iv $encrypted_99d98d3b8275_iv -in deploy_rsa.enc -out deploy_rsa -d
 - eval "$(ssh-agent -s)"
 - chmod 600 deploy_rsa
