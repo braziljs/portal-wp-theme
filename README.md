@@ -1,4 +1,4 @@
-[![Travis](https://img.shields.io/travis/USER/REPO.svg)](https://github.com/braziljs/portal-wp-theme)
+[![Travis](https://img.shields.io/travis/braziljs/portal-wp-theme.svg)](https://github.com/braziljs/portal-wp-theme)
 
 # BrazilJS Portal Theme
 
