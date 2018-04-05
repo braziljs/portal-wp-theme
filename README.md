@@ -1,3 +1,5 @@
+[![Travis](https://img.shields.io/travis/USER/REPO.svg)](https://github.com/braziljs/portal-wp-theme)
+
 # BrazilJS Portal Theme
 
 Tema Wordpress BrazilJS
