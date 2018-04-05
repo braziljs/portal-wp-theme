@@ -28,7 +28,7 @@ Template Name: Conf 2018 Teaser
     <div class="row" style="margin-bottom:50px;">
       <div class="header__info">
         <div class="__date">
-          <p>24 e 25 de AGOSTO</p>
+          <p>24 e 25 de AGOSTO!</p>
           <hr>
           <p class="__address">Porto Alegre, RS - BarraShopping Sul</p>  
         </div>
