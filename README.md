@@ -1,4 +1,6 @@
-[![Travis](https://img.shields.io/travis/braziljs/portal-wp-theme.svg)](https://github.com/braziljs/portal-wp-theme)
+⚠️⚠️⚠️ ATENÇÃO ⚠️⚠️⚠️
+Este projeto foi descontinuado.
+O novo tema do portal BrazilJS está no repositório: [Porta WP Theme 2018](https://github.com/braziljs/portal-wp-theme-2018)
 
 # BrazilJS Portal Theme
 
