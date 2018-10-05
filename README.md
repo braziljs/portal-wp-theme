@@ -1,6 +1,6 @@
 ⚠️⚠️⚠️ ATENÇÃO ⚠️⚠️⚠️  
 Este projeto foi descontinuado.  
-O novo tema do portal BrazilJS está no repositório: [Porta WP Theme 2018](https://github.com/braziljs/portal-wp-theme-2018)
+O novo tema do portal BrazilJS está no repositório: [Portal WP Theme 2018](https://github.com/braziljs/portal-wp-theme-2018)
 
 # BrazilJS Portal Theme
 
